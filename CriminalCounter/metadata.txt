@@ -9,12 +9,12 @@
 [general]
 name=CriminalCounter
 qgisMinimumVersion=2.0
-description=This plugin helps users to catch the criminal
+description=This plugin helps the policeman in duty to catch criminals
 version=0.1
-author=group6
+author=Group6_Geomatics_TUDelft
 email=dushenglan940128@163.com
 
-about=This plugin is developed by group 6/ master's Geomatics / TU Delft. The aim is to help the user (policeman in duty) to find an optimal way of catching criminal. Author: Shenglan Du, Davey Oldenburg, Nikos Tzounakos
+about=This plugin helps the policeman in duty to catch criminals
 
 tracker=github.com
 repository=https://github.com/nexiel/2017_Group6_Criminal_Counter

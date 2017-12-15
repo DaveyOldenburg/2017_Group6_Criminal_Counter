@@ -1,11 +1,11 @@
 #/***************************************************************************
 # CriminalCounter
 #
-# This plugin helps users to catch the criminal
+# This plugin helps the policeman in duty to catch criminals
 #							 -------------------
-#		begin				: 2017-12-12
+#		begin				: 2017-12-15
 #		git sha				: $Format:%H$
-#		copyright			: (C) 2017 by group6
+#		copyright			: (C) 2017 by Group6_Geomatics_TUDelft
 #		email				: dushenglan940128@163.com
 # ***************************************************************************/
 #
@@ -38,15 +38,15 @@ LOCALES =
 # translation
 SOURCES = \
 	__init__.py \
-	criminal_catching.py criminal_catching_dialog.py
+	CriminalCounter.py CriminalCounter_dockwidget.py
 
 PLUGINNAME = CriminalCounter
 
 PY_FILES = \
 	__init__.py \
-	criminal_catching.py criminal_catching_dialog.py
+	CriminalCounter.py CriminalCounter_dockwidget.py
 
-UI_FILES = criminal_catching_dialog_base.ui
+UI_FILES = CriminalCounter_dockwidget_base.ui
 
 EXTRAS = metadata.txt icon.png
 
