@@ -1,26 +1,26 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.18.12">
+<qgis projectname="" version="2.18.9">
   <title></title>
   <autotransaction active="0"/>
   <evaluateDefaultValues active="0"/>
-  <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+  <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Incident20171215122851681" source="C:/Users/USER/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Incident.shp" name="Incident">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Policestations20171215121511159" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Policestations.shp" name="Policestations">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="OpenStreetMap20171215122504056" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://tile.openstreetmap.org/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>19&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;" name="OpenStreetMap">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Incident20171215122851681" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Incident.shp" name="Incident">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Policemen20171215121508642" source="C:/Users/USER/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Policemen.shp" name="Policemen">
+    <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Unchecked" id="OpenStreetMap20171215122504056" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://tile.openstreetmap.org/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>19&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;" name="OpenStreetMap">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Policestations20171215121511159" source="C:/Users/USER/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Policestations.shp" name="Policestations">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Policemen20171215121508642" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Policemen.shp" name="Policemen">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="Buildings_Rotterdamcut420171215121839805" source="C:/Users/USER/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Buildings_Rotterdamcut4.shp" name="Buildings_Rotterdamcut4">
+    <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="Buildings_Rotterdamcut420171215121839805" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Buildings_Rotterdamcut4.shp" name="Buildings_Rotterdamcut4">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Roads_rotterdamcut20171213153553725" source="C:/Users/USER/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Roads_rotterdamcut.shp" name="Roads_rotterdamcut">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Roads_rotterdamcut20171213153553725" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Roads_rotterdamcut.shp" name="Roads_rotterdamcut">
       <customproperties/>
     </layer-tree-layer>
   </layer-tree-group>
@@ -28,16 +28,16 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>499659.45908195053925738</xmin>
-      <ymin>6783221.28329134918749332</ymin>
-      <xmax>500091.13960241241147742</xmax>
-      <ymax>6783475.94764366559684277</ymax>
+      <xmin>497182.15430975530762225</xmin>
+      <ymin>6779809.98720278684049845</ymin>
+      <xmax>503882.46998358343262225</xmax>
+      <ymax>6787875.20595278684049845</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
     <destinationsrs>
       <spatialrefsys>
-        <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+        <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
         <srsid>3857</srsid>
         <srid>3857</srid>
         <authid>EPSG:3857</authid>
@@ -68,24 +68,24 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Policestations" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Policestations20171215121511159" visible="1"/>
+      </filegroup>
+    </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Incident" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="Incident20171215122851681" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OpenStreetMap" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OpenStreetMap" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OpenStreetMap20171215122504056" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="OpenStreetMap20171215122504056" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Policemen" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="Policemen20171215121508642" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Policestations" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Policestations20171215121511159" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Buildings_Rotterdamcut4" showFeatureCount="0">
@@ -101,6 +101,12 @@
   </legend>
   <projectlayers>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>91224.64012822897348087</xmin>
+        <ymin>433794.32013796048704535</ymin>
+        <xmax>95111.48424931714544073</xmax>
+        <ymax>438482.51062934880610555</ymax>
+      </extent>
       <id>Buildings_Rotterdamcut420171215121839805</id>
       <datasource>./Buildings_Rotterdamcut4.shp</datasource>
       <keywordList>
@@ -109,7 +115,7 @@
       <layername>Buildings_Rotterdamcut4</layername>
       <srs>
         <spatialrefsys>
-          <proj4>+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +units=m +no_defs</proj4>
+          <proj4>+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.417,50.3319,465.552,-0.398957,0.343988,-1.8774,4.0725 +units=m +no_defs</proj4>
           <srsid>2517</srsid>
           <srid>28992</srid>
           <authid>EPSG:28992</authid>
@@ -919,7 +925,22 @@ def my_form_open(dialog, layer, feature):
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="Case Name">
+        <edittype widgetv2type="TextEdit" name="Case No.">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Urgency_R">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Criminalid">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Crim_info">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Case_info">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="Case_name">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
@@ -980,12 +1001,17 @@ def my_form_open(dialog, layer, feature):
       </labelattributes>
       <annotationform>.</annotationform>
       <aliases>
-        <alias field="Case Name" index="0" name=""/>
+        <alias field="Case No." index="0" name=""/>
+        <alias field="Urgency_R" index="1" name=""/>
+        <alias field="Criminalid" index="2" name=""/>
+        <alias field="Crim_info" index="3" name=""/>
+        <alias field="Case_info" index="4" name=""/>
+        <alias field="Case_name" index="5" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;Case Name&quot;" sortOrder="1">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;Case No.&quot;" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="id"/>
           <column width="-1" hidden="1" type="actions"/>
@@ -1004,7 +1030,12 @@ def my_form_open(dialog, layer, feature):
         <fieldstyles/>
       </conditionalstyles>
       <defaults>
-        <default field="Case Name" expression=""/>
+        <default field="Case No." expression=""/>
+        <default field="Urgency_R" expression=""/>
+        <default field="Criminalid" expression=""/>
+        <default field="Crim_info" expression=""/>
+        <default field="Case_info" expression=""/>
+        <default field="Case_name" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
     </maplayer>
@@ -1043,7 +1074,7 @@ def my_form_open(dialog, layer, feature):
       <layername>OpenStreetMap</layername>
       <srs>
         <spatialrefsys>
-          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
           <srsid>3857</srsid>
           <srid>3857</srid>
           <authid>EPSG:3857</authid>
@@ -1085,7 +1116,7 @@ def my_form_open(dialog, layer, feature):
       <layername>Policemen</layername>
       <srs>
         <spatialrefsys>
-          <proj4>+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +units=m +no_defs</proj4>
+          <proj4>+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.417,50.3319,465.552,-0.398957,0.343988,-1.8774,4.0725 +units=m +no_defs</proj4>
           <srsid>2517</srsid>
           <srid>28992</srid>
           <authid>EPSG:28992</authid>
@@ -1182,7 +1213,13 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
-        <columns/>
+        <columns>
+          <column width="-1" hidden="0" type="field" name="id"/>
+          <column width="-1" hidden="0" type="field" name="Name"/>
+          <column width="-1" hidden="0" type="field" name="Available"/>
+          <column width="-1" hidden="0" type="field" name="Transport"/>
+          <column width="-1" hidden="1" type="actions"/>
+        </columns>
       </attributetableconfig>
       <editform>.</editform>
       <editforminit/>
@@ -1202,7 +1239,7 @@ def my_form_open(dialog, layer, feature):
         <default field="Available" expression=""/>
         <default field="Transport" expression=""/>
       </defaults>
-      <previewExpression></previewExpression>
+      <previewExpression>COALESCE( "Name", '&lt;NULL>' )</previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>Policestations20171215121511159</id>
@@ -1213,7 +1250,7 @@ def my_form_open(dialog, layer, feature):
       <layername>Policestations</layername>
       <srs>
         <spatialrefsys>
-          <proj4>+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +units=m +no_defs</proj4>
+          <proj4>+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.417,50.3319,465.552,-0.398957,0.343988,-1.8774,4.0725 +units=m +no_defs</proj4>
           <srsid>2517</srsid>
           <srid>28992</srid>
           <authid>EPSG:28992</authid>
@@ -1335,7 +1372,7 @@ def my_form_open(dialog, layer, feature):
       <layername>Roads_rotterdamcut</layername>
       <srs>
         <spatialrefsys>
-          <proj4>+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.2369,50.0087,465.658,-0.406857,0.350733,-1.87035,4.0812 +units=m +no_defs</proj4>
+          <proj4>+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +towgs84=565.417,50.3319,465.552,-0.398957,0.343988,-1.8774,4.0725 +units=m +no_defs</proj4>
           <srsid>2517</srsid>
           <srid>28992</srid>
           <authid>EPSG:28992</authid>
