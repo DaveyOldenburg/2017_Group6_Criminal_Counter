@@ -56,7 +56,7 @@ def getLegendLayers(iface, geom='all', provider='all'):
 
 def getCanvasLayers(iface, geom='all', provider='all'):
     """Return list of valid QgsVectorLayer in QgsMapCanvas, with specific geometry type and/or data provider"""
-    layers_list = []
+layers_list = []
     for layer in iface.mapCanvas().layers():
         add_layer = False
         if layer.isValid() and layer.type() == QgsMapLayer.VectorLayer:
