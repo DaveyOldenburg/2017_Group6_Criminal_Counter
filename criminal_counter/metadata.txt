@@ -1,0 +1,39 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=criminal_counter
+qgisMinimumVersion=2.0
+description=This plugin helps the policeman on duty to catch criminals
+version=0.1
+author=group6
+email=^dushenglan940128@163.com
+
+about=This plugin helps the policeman on duty to catch criminals.
+
+tracker=gihub
+repository=https://github.com/nexiel/2017_Group6_Criminal_Counter
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=
+
+homepage=
+category=Plugins
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
