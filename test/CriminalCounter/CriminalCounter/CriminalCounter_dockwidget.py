@@ -26,6 +26,8 @@ import os
 from PyQt4 import QtGui, uic
 from PyQt4.QtCore import pyqtSignal
 
+
+
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'CriminalCounter_dockwidget_base.ui'))
 
@@ -43,6 +45,18 @@ class CriminalCounterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
+
+
+
+        # set up GUI operation signals
+        # data
+        #self.selectcomboBox_Rank.activated.connect(self.setcomboBox_Rank)
+
+    #def setcomboBox_Rank(self):
+        #layer_name = self.selectcomboBox_Rank.currentText()
+        #layer = uf.getLegendLayerByName(self.iface,layer_name)
+        #self.updateAttributes(layer)
+
 
     def closeEvent(self, event):
         self.closingPlugin.emit()
