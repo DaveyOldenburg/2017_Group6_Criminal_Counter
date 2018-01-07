@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
- CriminalCounterDockWidget
+ criminal_counterDockWidget
                                  A QGIS plugin
- This plugin helps the policeman in duty to catch criminals
+ This plugin helps the policeman on duty to catch criminals
                              -------------------
-        begin                : 2017-12-15
+        begin                : 2018-01-07
         git sha              : $Format:%H$
-        copyright            : (C) 2017 by Group6_Geomatics_TUDelft
-        email                : dushenglan940128@163.com
+        copyright            : (C) 2018 by group6
+        email                : ^dushenglan940128@163.com
  ***************************************************************************/
 
 /***************************************************************************
@@ -26,37 +26,23 @@ import os
 from PyQt4 import QtGui, uic
 from PyQt4.QtCore import pyqtSignal
 
-
-
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
-    os.path.dirname(__file__), 'CriminalCounter_dockwidget_base.ui'))
+    os.path.dirname(__file__), 'criminal_counter_dockwidget_base.ui'))
 
 
-class CriminalCounterDockWidget(QtGui.QDockWidget, FORM_CLASS):
+class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     closingPlugin = pyqtSignal()
 
     def __init__(self, parent=None):
         """Constructor."""
-        super(CriminalCounterDockWidget, self).__init__(parent)
+        super(criminal_counterDockWidget, self).__init__(parent)
         # Set up the user interface from Designer.
         # After setupUI you can access any designer object by doing
         # self.<objectname>, and you can use autoconnect slots - see
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
-
-
-
-        # set up GUI operation signals
-        # data
-        #self.selectcomboBox_Rank.activated.connect(self.setcomboBox_Rank)
-
-    #def setcomboBox_Rank(self):
-        #layer_name = self.selectcomboBox_Rank.currentText()
-        #layer = uf.getLegendLayerByName(self.iface,layer_name)
-        #self.updateAttributes(layer)
-
 
     def closeEvent(self, event):
         self.closingPlugin.emit()
