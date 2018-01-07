@@ -31,9 +31,9 @@
     <item row="1" column="0">
      <widget class="QTabWidget" name="tab_Main">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
-      <widget class="QWidget" name="tab_Case_2">
+      <widget class="QWidget" name="tab_Case">
        <attribute name="title">
         <string>Case Input</string>
        </attribute>
@@ -77,10 +77,10 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QComboBox" name="comboBox_Rank_2"/>
+           <widget class="QComboBox" name="comboBox_Rank"/>
           </item>
           <item row="1" column="1">
-           <widget class="QComboBox" name="comboBox_Time_2"/>
+           <widget class="QComboBox" name="comboBox_Time"/>
           </item>
          </layout>
         </widget>
@@ -117,7 +117,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QListView" name="list_case_2">
+           <widget class="QListView" name="list_case">
             <property name="whatsThis">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;case no.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
@@ -133,12 +133,12 @@
            </widget>
           </item>
           <item>
-           <widget class="QGraphicsView" name="graphics_case_2"/>
+           <widget class="QGraphicsView" name="graphics_case"/>
           </item>
          </layout>
         </widget>
        </widget>
-       <widget class="QPushButton" name="button_run_2">
+       <widget class="QPushButton" name="button_run">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -151,7 +151,7 @@
          <string>Run Case</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_cancel_2">
+       <widget class="QPushButton" name="button_cancel">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -169,7 +169,7 @@
        <attribute name="title">
         <string>Analysis</string>
        </attribute>
-       <widget class="QPushButton" name="button_NodeSelect_2">
+       <widget class="QPushButton" name="button_NodeSelect">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -198,7 +198,7 @@
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QTableView" name="table_Node_2">
+       <widget class="QTableView" name="table_Node">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -221,7 +221,7 @@
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Job List:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
-       <widget class="QListView" name="list_PoliceJob_2">
+       <widget class="QListView" name="list_PoliceJob">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -242,7 +242,7 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QPushButton" name="button_add_2">
+          <widget class="QPushButton" name="button_add">
            <property name="toolTip">
             <string/>
            </property>
@@ -261,7 +261,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="button_substract_2">
+          <widget class="QPushButton" name="button_substract">
            <property name="toolTip">
             <string/>
            </property>
@@ -280,7 +280,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="button_calculate_2">
+          <widget class="QPushButton" name="button_calculate">
            <property name="text">
             <string>Calculation</string>
            </property>
@@ -299,21 +299,21 @@
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="1" column="0">
-          <widget class="QPushButton" name="button_StartCounter_2">
+          <widget class="QPushButton" name="button_StartCounter">
            <property name="text">
             <string>Start Counter</string>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QPushButton" name="button_undo_2">
+          <widget class="QPushButton" name="button_undo">
            <property name="text">
             <string>Undo</string>
            </property>
           </widget>
          </item>
          <item row="0" column="0" colspan="2">
-          <widget class="QProgressBar" name="progress_job_2">
+          <widget class="QProgressBar" name="progress_job">
            <property name="value">
             <number>24</number>
            </property>
@@ -339,7 +339,7 @@
          <string>Action Summary:</string>
         </property>
        </widget>
-       <widget class="QListView" name="list_summary_2">
+       <widget class="QListView" name="list_summary">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -362,7 +362,7 @@
          <string>Graphic Report:</string>
         </property>
        </widget>
-       <widget class="QGraphicsView" name="graphics_report_2">
+       <widget class="QGraphicsView" name="graphics_report">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -372,7 +372,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_clear_2">
+       <widget class="QPushButton" name="button_clear">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -385,7 +385,7 @@
          <string>Clear Report</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_save_2">
+       <widget class="QPushButton" name="button_save">
         <property name="geometry">
          <rect>
           <x>210</x>
