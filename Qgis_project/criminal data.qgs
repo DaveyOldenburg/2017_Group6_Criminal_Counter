@@ -5,7 +5,7 @@
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Policestations20171215121511159" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Policestations.shp" name="Policestations">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="Policestations20171215121511159" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Policestations.shp" name="Policestations">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Incident20171215122851681" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Incident.shp" name="Incident">
@@ -17,7 +17,7 @@
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Policemen20171215121508642" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Policemen.shp" name="Policemen">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="Buildings_Rotterdamcut420171215121839805" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Buildings_Rotterdamcut4.shp" name="Buildings_Rotterdamcut4">
+    <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Unchecked" id="Buildings_Rotterdamcut420171215121839805" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Buildings_Rotterdamcut4.shp" name="Buildings_Rotterdamcut4">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Roads_rotterdamcut20171213153553725" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Roads_rotterdamcut.shp" name="Roads_rotterdamcut">
@@ -28,10 +28,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>497182.15430975530762225</xmin>
-      <ymin>6779809.98720278684049845</ymin>
-      <xmax>503882.46998358343262225</xmax>
-      <ymax>6787875.20595278684049845</ymax>
+      <xmin>497805.43242026527877897</xmin>
+      <ymin>6780065.53122809529304504</ymin>
+      <xmax>504505.74809409340377897</xmax>
+      <ymax>6788130.74997809529304504</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -68,9 +68,9 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Policestations" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Policestations" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Policestations20171215121511159" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="Policestations20171215121511159" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Incident" showFeatureCount="0">
@@ -88,9 +88,9 @@
         <legendlayerfile isInOverview="0" layerid="Policemen20171215121508642" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Buildings_Rotterdamcut4" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Buildings_Rotterdamcut4" showFeatureCount="0">
       <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Buildings_Rotterdamcut420171215121839805" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="Buildings_Rotterdamcut420171215121839805" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Roads_rotterdamcut" showFeatureCount="0">
@@ -943,6 +943,9 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="TextEdit" name="Case_name">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="Time">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
         <symbols>
@@ -1007,11 +1010,12 @@ def my_form_open(dialog, layer, feature):
         <alias field="Crim_info" index="3" name=""/>
         <alias field="Case_info" index="4" name=""/>
         <alias field="Case_name" index="5" name=""/>
+        <alias field="Time" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;Case No.&quot;" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;Time&quot;" sortOrder="1">
         <columns>
           <column width="-1" hidden="0" type="field" name="id"/>
           <column width="-1" hidden="1" type="actions"/>
@@ -1036,6 +1040,7 @@ def my_form_open(dialog, layer, feature):
         <default field="Crim_info" expression=""/>
         <default field="Case_info" expression=""/>
         <default field="Case_name" expression=""/>
+        <default field="Time" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
     </maplayer>
