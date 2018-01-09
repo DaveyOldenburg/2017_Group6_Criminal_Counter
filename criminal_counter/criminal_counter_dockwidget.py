@@ -69,6 +69,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # tab analysis
         self.button_NodeSelect.clicked.connect(self.createnodes)
         self.button_add.clicked.connect(self.addnode)
+        self.button_subtract.clicked.connect(self.removenode)
+        self.button_calculate.clicked.connect(self.calculation)
 
 
 
@@ -153,11 +155,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 break
 
 
-
-
-
 ###
-# Node Input
+# Analysis Tab
 ###
     def createnodes(self):
         #Create temp layer "Nodes"
@@ -176,9 +175,12 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     def addnode(self):
         # remember currently selected tool
+        nodes = uf.getLegendLayerByName(self.iface, "Nodes")
+        nodes.startEditing()
         self.userTool = self.canvas.mapTool()
         # activate coordinate capture tool
         self.canvas.setMapTool(self.emitPoint)
+
 
 
     def getPoint(self, mapPoint, mouseButton):
@@ -199,6 +201,32 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
             nodes.commitChanges()
             self.refreshCanvas(nodes)
+
+    #NOT FINISHED
+    def removenode(self):  #nodeId
+        #removes selected node from list, given nodeId
+        nodes = uf.getLegendLayerByName(self.iface, "Nodes")
+        nodes.startEditing()
+        nodes.deleteFeature(2)
+        nodes.commitChanges()
+
+        self.refreshCanvas(nodes)
+
+
+    def calculation(self):
+        
+        nodes = uf.getLegendLayerByName(self.iface, "Nodes")
+        police= uf.getLegendLayerByName(self.iface, "Policemen")
+
+
+
+
+
+
+
+
+
+
 
 
     #refresh canvas after changes
