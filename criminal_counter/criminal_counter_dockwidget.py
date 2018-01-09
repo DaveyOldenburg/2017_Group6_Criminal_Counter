@@ -56,7 +56,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.canvas = self.iface.mapCanvas()
 
 
-        self.selectLayerCombo.activated.connect(self.setSelectedLayer)
         # tab case input
         self.iface.projectRead.connect(self.loadLayers)
         self.iface.newProjectCreated.connect(self.loadLayers)
@@ -65,10 +64,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.comboBox_Rank.activated.connect(self.setSelectedObject)
         self.comboBox_Time.activated.connect(self.setSelectedObject)
 
-<<<<<<< HEAD
-        self.button_NodeSelect.clicked.connect(self.buildNetwork)
-=======
->>>>>>> 4657de90cd6eaea8b1281af0182c90507ac48735
+
 
         # tab analysis
         self.button_NodeSelect.clicked.connect(self.createnodes)
@@ -135,77 +131,9 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         pass
 
 
-<<<<<<< HEAD
-
-    def calculateBuffer(self):
-        #takes incident as input
-        origins = incident
-        layer = self.getSelectedLayer()
-        if origins > 0:
-            cutoff_distance = 0.05
-            buffers = {}
-            for point in origins:
-                geom = point.geometry()
-                buffers[point.id()] = geom.buffer(cutoff_distance,12).asPolygon()
-            # store the buffer results in temporary layer called "Buffers"
-            buffer_layer = uf.getLegendLayerByName(self.iface, "Buffers")
-            # create one if it doesn't exist
-            if not buffer_layer:
-                attribs = ['id', 'distance']
-                types = [QtCore.QVariant.String, QtCore.QVariant.Double]
-                buffer_layer = uf.createTempLayer('Buffers','POLYGON',layer.crs().postgisSrid(), attribs, types)
-                uf.loadTempLayer(buffer_layer)
-                buffer_layer.setLayerName('Buffers')
-            # insert buffer polygons
-            geoms = []
-            values = []
-            for buffer in buffers.iteritems():
-                # each buffer has an id and a geometry
-                geoms.append(buffer[1])
-                # in the case of values, it expects a list of multiple values in each item - list of lists
-                values.append([buffer[0],cutoff_distance])
-            uf.insertTempFeatures(buffer_layer, geoms, values)
-            self.refreshCanvas(buffer_layer)
-
-    def getSelectedLayer(self):
-        layer_name = self.selectLayerCombo.currentText()
-        layer = uf.getLegendLayerByName(self.iface,layer_name)
-        return layer
 
 
-    def getNetwork(self):
-        roads_layer = self.getSelectedLayer()
-        if roads_layer:
-            # see if there is an obstacles layer to subtract roads from the network
-            obstacles_layer = uf.getLegendLayerByName(self.iface, "Roads_Rotterdamcut")
-            if obstacles_layer:
-                # retrieve roads outside obstacles (inside = False)
-                features = uf.getFeaturesByIntersection(roads_layer, obstacles_layer, False)
-                # add these roads to a new temporary layer
-                road_network = uf.createTempLayer('Temp_Network','LINESTRING',roads_layer.crs().postgisSrid(),[],[])
-                road_network.dataProvider().addFeatures(features)
-            else:
-                road_network = roads_layer
-            return road_network
-        else:
-            return
 
-    def buildNetwork(self):
-        self.network_layer = self.getNetwork()
-        if self.network_layer:
-            # get the points to be used as origin and destination
-            # in this case gets the centroid of the selected features
-            selected_sources = self.getSelectedLayer().selectedFeatures()
-            source_points = [feature.geometry().centroid().asPoint() for feature in selected_sources]
-            # build the graph including these points
-            if len(source_points) > 1:
-                self.graph, self.tied_points = uf.makeUndirectedGraph(self.network_layer, source_points)
-                # the tied points are the new source_points on the graph
-                if self.graph and self.tied_points:
-                    text = "network is built for %s points" % len(self.tied_points)
-                    self.insertReport(text)
-        return
-=======
 ###
 # Node Input
 ###
@@ -257,4 +185,4 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             layer.setCacheImage(None)
         else:
             self.canvas.refresh()
->>>>>>> 4657de90cd6eaea8b1281af0182c90507ac48735
+
