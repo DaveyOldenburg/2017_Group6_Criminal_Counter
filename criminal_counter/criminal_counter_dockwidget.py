@@ -55,23 +55,22 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.iface = iface
         self.canvas = self.iface.mapCanvas()
 
-
         # tab case input
         self.iface.projectRead.connect(self.loadLayers)
         self.iface.newProjectCreated.connect(self.loadLayers)
         self.iface.legendInterface().itemRemoved.connect(self.loadLayers)
         self.iface.legendInterface().itemAdded.connect(self.loadLayers)
+        self.tab_Main.setCurrentIndex(0)
         self.comboBox_Rank.activated.connect(self.setCasebyRank)
         self.comboBox_Time.activated.connect(self.setCasebyTime)
-
-
+        self.button_run.clicked.connect(self.runcase)
+        self.button_cancel.clicked.connect(self.cancel)
 
         # tab analysis
         self.button_NodeSelect.clicked.connect(self.createnodes)
         self.button_add.clicked.connect(self.addnode)
-        self.button_subtract.clicked.connect(self.removenode)
+        self.button_substract.clicked.connect(self.removenode)
         self.button_calculate.clicked.connect(self.calculation)
-
 
 
         self.emitPoint = QgsMapToolEmitPoint(self.canvas)
@@ -81,7 +80,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # initialisation
         self.loadLayers()
 
-
     def closeEvent(self, event):
         self.closingPlugin.emit()
         event.accept()
@@ -90,22 +88,17 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 #Incidents input
 ###
     def loadLayers(self):
-
+        # load incidents layer and initialize two combobox
         self.comboBox_Rank.clear()
         self.comboBox_Time.clear()
-
-        # load incidents layer and initialize two combobox
-
         incident_layernm = "Incidents"
         incident_layer = uf.getLegendLayerByName(self.iface, incident_layernm)
         self.setOriginalCombox(incident_layer)
 
     def setOriginalCombox(self, layer):
-
         # initialize comboboxes based on order of rank or time
         rank_fieldnm = "Urgency_R"
         time_fieldnm = "Time"
-
         if uf.fieldExists(layer, rank_fieldnm) and uf.fieldExists(layer, time_fieldnm):
             sorted_rank = self.orderbyAttribute(layer, rank_fieldnm)
             sorted_time = self.orderbyAttribute(layer, time_fieldnm)
@@ -130,16 +123,20 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         return incidents_info
 
     def setCasebyRank(self):
+        # select the incident in rank combobox
         case_no = self.comboBox_Rank.currentText()
         self.writeCaseList(case_no)
 
     def setCasebyTime(self):
+        # select the incident in time combobox
         case_no = self.comboBox_Time.currentText()
         self.writeCaseList(case_no)
 
     def writeCaseList(self, caseno):
-        self.list_case.clear()
+        # write the case information in the list according to the case number
         layer = uf.getLegendLayerByName(self.iface,"Incidents")
+        self.list_case.clear()
+        layer.setSelectedFeatures([])
         case_info = []
         for feat in layer.getFeatures():
             att = feat.attributes()[6]
@@ -152,15 +149,32 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 case_info.append("time: " + feat.attributes()[5])
                 case_info.append("case number: " + feat.attributes()[6])
                 self.list_case.addItems(case_info)
+                layer.setSelectedFeatures([feat.id()])
                 break
 
+    def runcase(self):
+        # put the focus on the selected incident and jump to analysis part
+        self.tab_Main.setCurrentIndex(1)
+        layer = uf.getLegendLayerByName(self.iface, "Incidents")
+        self.canvas.zoomToSelected(layer)
+        self.canvas.zoomScale(5000.0)
+        self.canvas.refresh()
+
+    def cancel(self):
+        # clear selection of incidents
+        layer = uf.getLegendLayerByName(self.iface, "Incidents")
+        layer.setSelectedFeatures([])
+        self.list_case.clear()
+        self.comboBox_Rank.clear()
+        self.comboBox_Time.clear()
+        self.loadLayers()
 
 ###
-# Analysis Tab
+# Node Input
 ###
     def createnodes(self):
         #Create temp layer "Nodes"
-        layer=uf.getLegendLayerByName(self.iface,"Policemen")
+        #layer=uf.getLegendLayerByName(self.iface,"Policemen")
 
         nodes=uf.getLegendLayerByName(self.iface, 'Nodes')
         if not nodes:
@@ -182,7 +196,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.canvas.setMapTool(self.emitPoint)
 
 
-
     def getPoint(self, mapPoint, mouseButton):
         # change tool so you don't get more than one POI
         self.canvas.unsetMapTool(self.emitPoint)
@@ -202,6 +215,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             nodes.commitChanges()
             self.refreshCanvas(nodes)
 
+
+
     #NOT FINISHED
     def removenode(self):  #nodeId
         #removes selected node from list, given nodeId
@@ -218,21 +233,10 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
         police= uf.getLegendLayerByName(self.iface, "Policemen")
 
-
-
-
-
-
-
-
-
-
-
-
+        
     #refresh canvas after changes
     def refreshCanvas(self, layer):
         if self.canvas.isCachingEnabled():
             layer.setCacheImage(None)
         else:
             self.canvas.refresh()
-
