@@ -50,9 +50,11 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
-
+        # define globals
         self.iface = iface
         self.canvas = self.iface.mapCanvas()
+
+
         self.iface.projectRead.connect(self.loadLayers)
         self.iface.newProjectCreated.connect(self.loadLayers)
         self.iface.legendInterface().itemRemoved.connect(self.loadLayers)
@@ -66,6 +68,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         event.accept()
 
     def loadLayers(self):
+        self.comboBox_Rank.clear()
+        self.comboBox_Time.clear()
         incident_layernm = "Incidents"
         incident_layer = uf.getLegendLayerByName(self.iface, incident_layernm)
         self.setOriginalCombox(incident_layer)
@@ -76,12 +80,16 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             # get rank items and add them to combobox
             #rank, ids_rank = uf.getFieldValues(layer, "Urgency_R")
             #sorted_rank = self.orderbyAttribute(rank, ids_rank)
+
             #self.comboBox_Rank.addItems(rank)
+
+
+
 
             # get time items and add them to combobox
             time, ids_time = uf.getFieldValues(layer, "Time")
             #sorted_time = self.orderbyAttribute(time, ids_time)
-            self.comboBox_Rank.addItems(time)
+            self.comboBox_Time.addItems(time)
         else:
             return
 
