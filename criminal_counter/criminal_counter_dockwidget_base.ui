@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>416</width>
-    <height>858</height>
+    <height>701</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
     <item row="1" column="0">
      <widget class="QTabWidget" name="tab_Main">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_Case">
        <attribute name="title">
@@ -91,7 +91,7 @@
           <x>20</x>
           <y>140</y>
           <width>321</width>
-          <height>421</height>
+          <height>351</height>
          </rect>
         </property>
         <property name="title">
@@ -103,7 +103,7 @@
            <x>20</x>
            <y>30</y>
            <width>281</width>
-           <height>371</height>
+           <height>301</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -142,7 +142,7 @@
         <property name="geometry">
          <rect>
           <x>210</x>
-          <y>590</y>
+          <y>490</y>
           <width>111</width>
           <height>31</height>
          </rect>
@@ -155,26 +155,13 @@
         <property name="geometry">
          <rect>
           <x>210</x>
-          <y>630</y>
+          <y>520</y>
           <width>111</width>
           <height>31</height>
          </rect>
         </property>
         <property name="text">
          <string>Cancel</string>
-        </property>
-       </widget>
-       <widget class="QScrollBar" name="verticalScrollBar">
-        <property name="geometry">
-         <rect>
-          <x>360</x>
-          <y>0</y>
-          <width>20</width>
-          <height>711</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
         </property>
        </widget>
       </widget>
@@ -240,7 +227,7 @@
           <x>20</x>
           <y>220</y>
           <width>321</width>
-          <height>371</height>
+          <height>271</height>
          </rect>
         </property>
        </widget>
@@ -250,7 +237,7 @@
           <x>20</x>
           <y>150</y>
           <width>295</width>
-          <height>31</height>
+          <height>32</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -305,9 +292,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>600</y>
+          <y>500</y>
           <width>321</width>
-          <height>61</height>
+          <height>66</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
@@ -381,7 +368,7 @@
           <x>20</x>
           <y>310</y>
           <width>321</width>
-          <height>271</height>
+          <height>201</height>
          </rect>
         </property>
        </widget>
@@ -401,8 +388,8 @@
        <widget class="QPushButton" name="button_save">
         <property name="geometry">
          <rect>
-          <x>210</x>
-          <y>610</y>
+          <x>230</x>
+          <y>520</y>
           <width>111</width>
           <height>31</height>
          </rect>
