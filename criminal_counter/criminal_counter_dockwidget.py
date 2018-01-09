@@ -66,8 +66,12 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
         # tab analysis
         self.button_NodeSelect.clicked.connect(self.createnodes)
-        #self.button_add.clicked.connect(self.addnode)
+        self.button_add.clicked.connect(self.addnode)
 
+
+
+        self.emitPoint = QgsMapToolEmitPoint(self.canvas)
+        self.emitPoint.canvasClicked.connect(self.getPoint)
         # tab report
 
         # initialisation
@@ -129,6 +133,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 # Node Input
 ###
     def createnodes(self):
+        #Create temp layer "Nodes"
         layer=uf.getLegendLayerByName(self.iface,"Policemen")
 
         nodes=uf.getLegendLayerByName(self.iface, 'Nodes')
@@ -138,8 +143,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             nodes=uf.createTempLayer("Nodes", "POINT", layer.crs().postgisSrid(), attribs, types)
             uf.loadTempLayer(nodes)
             nodes.setLayerName('Nodes')
-
-
+        nodes.startEditing()
 
 
     def addnode(self):
@@ -148,3 +152,31 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # activate coordinate capture tool
         self.canvas.setMapTool(self.emitPoint)
 
+
+    def getPoint(self, mapPoint, mouseButton):
+        # change tool so you don't get more than one POI
+        self.canvas.unsetMapTool(self.emitPoint)
+        self.canvas.setMapTool(self.userTool)
+        #Get the click
+        if mapPoint:
+            print(mapPoint)
+            # here do something with the point
+        nodes = uf.getLegendLayerByName(self.iface, "Nodes")
+        pr=nodes.dataProvider()
+
+
+        fet=QgsFeature()
+        fet.setGeometry(QgsGeometry.fromPoint(QgsPoint(499800,6783400)))
+        fet.setAttributes(['1'])
+        pr.addFeatures([fet])
+
+        nodes.commitChanges()
+        self.refreshCanvas(nodes)
+
+
+    #refresh canvas after changes
+    def refreshCanvas(self, layer):
+        if self.canvas.isCachingEnabled():
+            layer.setCacheImage(None)
+        else:
+            self.canvas.refresh()

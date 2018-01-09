@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>398</width>
-    <height>697</height>
+    <width>416</width>
+    <height>858</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
     <item row="1" column="0">
      <widget class="QTabWidget" name="tab_Main">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_Case">
        <attribute name="title">
@@ -91,7 +91,7 @@
           <x>20</x>
           <y>140</y>
           <width>321</width>
-          <height>341</height>
+          <height>421</height>
          </rect>
         </property>
         <property name="title">
@@ -103,7 +103,7 @@
            <x>20</x>
            <y>30</y>
            <width>281</width>
-           <height>291</height>
+           <height>371</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -142,7 +142,7 @@
         <property name="geometry">
          <rect>
           <x>210</x>
-          <y>500</y>
+          <y>590</y>
           <width>111</width>
           <height>31</height>
          </rect>
@@ -155,13 +155,26 @@
         <property name="geometry">
          <rect>
           <x>210</x>
-          <y>530</y>
+          <y>630</y>
           <width>111</width>
           <height>31</height>
          </rect>
         </property>
         <property name="text">
          <string>Cancel</string>
+        </property>
+       </widget>
+       <widget class="QScrollBar" name="verticalScrollBar">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>0</y>
+          <width>20</width>
+          <height>711</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
         </property>
        </widget>
       </widget>
@@ -227,7 +240,7 @@
           <x>20</x>
           <y>220</y>
           <width>321</width>
-          <height>271</height>
+          <height>371</height>
          </rect>
         </property>
        </widget>
@@ -237,7 +250,7 @@
           <x>20</x>
           <y>150</y>
           <width>295</width>
-          <height>32</height>
+          <height>31</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -292,51 +305,34 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>490</y>
+          <y>600</y>
           <width>321</width>
-          <height>66</height>
+          <height>61</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_3"/>
-       </widget>
-       <widget class="QPushButton" name="button_undo">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>520</y>
-          <width>161</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Undo</string>
-        </property>
-       </widget>
-       <widget class="QProgressBar" name="progress_job">
-        <property name="geometry">
-         <rect>
-          <x>24</x>
-          <y>493</y>
-          <width>309</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="value">
-         <number>24</number>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_StartCounter">
-        <property name="geometry">
-         <rect>
-          <x>18</x>
-          <y>520</y>
-          <width>160</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Start Counter</string>
-        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="1" column="0">
+          <widget class="QPushButton" name="button_StartCounter">
+           <property name="text">
+            <string>Start Counter</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="button_undo">
+           <property name="text">
+            <string>Undo</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="2">
+          <widget class="QProgressBar" name="progress_job">
+           <property name="value">
+            <number>24</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_Reporting_2">
@@ -362,7 +358,7 @@
           <x>20</x>
           <y>40</y>
           <width>321</width>
-          <height>201</height>
+          <height>231</height>
          </rect>
         </property>
        </widget>
@@ -370,7 +366,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>250</y>
+          <y>290</y>
           <width>111</width>
           <height>16</height>
          </rect>
@@ -383,17 +379,17 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>270</y>
+          <y>310</y>
           <width>321</width>
-          <height>211</height>
+          <height>271</height>
          </rect>
         </property>
        </widget>
        <widget class="QPushButton" name="button_clear">
         <property name="geometry">
          <rect>
-          <x>230</x>
-          <y>540</y>
+          <x>210</x>
+          <y>650</y>
           <width>111</width>
           <height>31</height>
          </rect>
@@ -405,8 +401,8 @@
        <widget class="QPushButton" name="button_save">
         <property name="geometry">
          <rect>
-          <x>230</x>
-          <y>500</y>
+          <x>210</x>
+          <y>610</y>
           <width>111</width>
           <height>31</height>
          </rect>
