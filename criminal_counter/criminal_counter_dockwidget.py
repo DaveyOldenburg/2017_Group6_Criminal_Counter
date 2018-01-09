@@ -60,8 +60,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.iface.newProjectCreated.connect(self.loadLayers)
         self.iface.legendInterface().itemRemoved.connect(self.loadLayers)
         self.iface.legendInterface().itemAdded.connect(self.loadLayers)
-        self.comboBox_Rank.activated.connect(self.setSelectedObject)
-        self.comboBox_Time.activated.connect(self.setSelectedObject)
+        self.comboBox_Rank.activated.connect(self.setCasebyRank)
+        self.comboBox_Time.activated.connect(self.setCasebyTime)
 
 
         # tab analysis
@@ -114,7 +114,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # order the incidents according to one attribute
         # return the sorted list of case info
         attribute, ids = uf.getFieldValues(layer, attributenm)
-        tp_sorted = sorted(zip(attribute,ids))
+        tp_sorted = sorted(zip(attribute,ids), reverse = True)
         lst_sorted_id = []
         for item in tp_sorted:
             lst_sorted_id.append(item[1])
@@ -125,8 +125,30 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                     incidents_info.append(feat.attributes()[6])
         return incidents_info
 
-    def setSelectedObject(self):
-        pass
+    def setCasebyRank(self):
+        case_no = self.comboBox_Rank.currentText()
+        self.writeCaseList(case_no)
+
+    def setCasebyTime(self):
+        case_no = self.comboBox_Time.currentText()
+        self.writeCaseList(case_no)
+
+    def writeCaseList(self, caseno):
+        self.list_case.clear()
+        layer = uf.getLegendLayerByName(self.iface,"Incidents")
+        case_info = []
+        for feat in layer.getFeatures():
+            att = feat.attributes()[6]
+            if att == caseno:
+                case_info.append("rank: " + str(feat.attributes()[0]))
+                case_info.append("criminal id: " + str(feat.attributes()[1]))
+                case_info.append("criminal information: " + feat.attributes()[2])
+                case_info.append("case information: " + feat.attributes()[3])
+                case_info.append("case name: " + feat.attributes()[4])
+                case_info.append("time: " + feat.attributes()[5])
+                case_info.append("case number: " + feat.attributes()[6])
+                self.list_case.addItems(case_info)
+                break
 
 
 ###

@@ -117,7 +117,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QListView" name="list_case">
+           <widget class="QListWidget" name="list_case">
             <property name="whatsThis">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;case no.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
