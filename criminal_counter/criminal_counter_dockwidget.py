@@ -50,18 +50,12 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
-<<<<<<< HEAD
+
         # define globals
         self.iface = iface
         self.canvas = self.iface.mapCanvas()
 
-
-=======
-        self.iface = iface
-        self.canvas = self.iface.mapCanvas()
-
         # tab case input
->>>>>>> a5d111247a558ec8894b041745bebf8f5b29c789
         self.iface.projectRead.connect(self.loadLayers)
         self.iface.newProjectCreated.connect(self.loadLayers)
         self.iface.legendInterface().itemRemoved.connect(self.loadLayers)
@@ -83,42 +77,27 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 #Incidents input
 ###
     def loadLayers(self):
-<<<<<<< HEAD
+
         self.comboBox_Rank.clear()
         self.comboBox_Time.clear()
-=======
+
         # load incidents layer and initialize two combobox
->>>>>>> a5d111247a558ec8894b041745bebf8f5b29c789
+
         incident_layernm = "Incidents"
         incident_layer = uf.getLegendLayerByName(self.iface, incident_layernm)
         self.setOriginalCombox(incident_layer)
 
     def setOriginalCombox(self, layer):
-<<<<<<< HEAD
-        if uf.fieldExists(layer, "Urgency_R") and uf.fieldExists(layer, "Time"):
-            # get rank items and add them to combobox
-            #rank, ids_rank = uf.getFieldValues(layer, "Urgency_R")
-            #sorted_rank = self.orderbyAttribute(rank, ids_rank)
 
-            #self.comboBox_Rank.addItems(rank)
-
-
-
-
-            # get time items and add them to combobox
-            time, ids_time = uf.getFieldValues(layer, "Time")
-            #sorted_time = self.orderbyAttribute(time, ids_time)
-            self.comboBox_Time.addItems(time)
-=======
         # initialize comboboxes based on order of rank or time
         rank_fieldnm = "Urgency_R"
         time_fieldnm = "Time"
+
         if uf.fieldExists(layer, rank_fieldnm) and uf.fieldExists(layer, time_fieldnm):
             sorted_rank = self.orderbyAttribute(layer, rank_fieldnm)
             sorted_time = self.orderbyAttribute(layer, time_fieldnm)
             self.comboBox_Rank.addItems(sorted_rank)
             self.comboBox_Time.addItems(sorted_time)
->>>>>>> a5d111247a558ec8894b041745bebf8f5b29c789
         else:
             return
 
@@ -134,7 +113,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         for ids in lst_sorted_id:
             for feat in layer.getFeatures():
                 if ids == feat.id():
-                    incidents_info.append(feat.attributes()[4])
+                    incidents_info.append(feat.attributes()[6])
         return incidents_info
 
     def setSelectedObject(self):
