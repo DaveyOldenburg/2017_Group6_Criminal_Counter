@@ -55,6 +55,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.iface = iface
         self.canvas = self.iface.mapCanvas()
 
+
         # tab case input
         self.iface.projectRead.connect(self.loadLayers)
         self.iface.newProjectCreated.connect(self.loadLayers)
@@ -62,6 +63,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.iface.legendInterface().itemAdded.connect(self.loadLayers)
         self.comboBox_Rank.activated.connect(self.setCasebyRank)
         self.comboBox_Time.activated.connect(self.setCasebyTime)
+
 
 
         # tab analysis
@@ -151,6 +153,9 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 break
 
 
+
+
+
 ###
 # Node Input
 ###
@@ -202,3 +207,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             layer.setCacheImage(None)
         else:
             self.canvas.refresh()
+<<<<<<< HEAD
+=======
+
+>>>>>>> 425f183028cc1d7a52adc878e60e50b2235f09f3
