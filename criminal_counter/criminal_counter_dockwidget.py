@@ -26,7 +26,7 @@ import os
 from qgis.core import *
 from qgis.utils import iface
 from PyQt4 import QtGui, uic
-from PyQt4.QtCore import pyqtSignal
+from PyQt4.QtCore import pyqtSignal, QVariant
 
 from qgis.gui import *
 import processing
@@ -140,7 +140,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         if not nodes:
             attribs = ["id"]
             types = [QtCore.QVariant.String]
-            nodes=uf.createTempLayer("Nodes", "POINT", layer.crs().postgisSrid(), attribs, types)
+            nodes=QgsVectorLayer('Point?crs=epsg:28992', 'Nodes', 'memory')
+            uf.addFields(nodes, ['id'], [QVariant.String])
             uf.loadTempLayer(nodes)
             nodes.setLayerName('Nodes')
         nodes.startEditing()
@@ -159,19 +160,18 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.canvas.setMapTool(self.userTool)
         #Get the click
         if mapPoint:
-            print(mapPoint)
             # here do something with the point
-        nodes = uf.getLegendLayerByName(self.iface, "Nodes")
-        pr=nodes.dataProvider()
+            nodes = uf.getLegendLayerByName(self.iface, "Nodes")
+            pr=nodes.dataProvider()
 
 
-        fet=QgsFeature()
-        fet.setGeometry(QgsGeometry.fromPoint(QgsPoint(499800,6783400)))
-        fet.setAttributes(['1'])
-        pr.addFeatures([fet])
+            fet=QgsFeature()
+            fet.setGeometry(QgsGeometry.fromPoint(mapPoint))
+            #fet.setAttributes(['1']), no setting attributes for now
+            pr.addFeatures([fet])
 
-        nodes.commitChanges()
-        self.refreshCanvas(nodes)
+            nodes.commitChanges()
+            self.refreshCanvas(nodes)
 
 
     #refresh canvas after changes
