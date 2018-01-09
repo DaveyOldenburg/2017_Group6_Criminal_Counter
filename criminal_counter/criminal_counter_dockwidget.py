@@ -207,7 +207,4 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             layer.setCacheImage(None)
         else:
             self.canvas.refresh()
-<<<<<<< HEAD
-=======
 
->>>>>>> 425f183028cc1d7a52adc878e60e50b2235f09f3
