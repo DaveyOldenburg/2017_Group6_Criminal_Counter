@@ -26,7 +26,7 @@ import os
 from qgis.core import *
 from qgis.utils import iface
 from PyQt4 import QtGui, uic
-from PyQt4.QtCore import pyqtSignal
+from PyQt4.QtCore import pyqtSignal, QVariant
 
 from qgis.gui import *
 import processing
@@ -65,12 +65,23 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.comboBox_Rank.activated.connect(self.setSelectedObject)
         self.comboBox_Time.activated.connect(self.setSelectedObject)
 
+<<<<<<< HEAD
         self.button_NodeSelect.clicked.connect(self.buildNetwork)
+=======
+>>>>>>> 4657de90cd6eaea8b1281af0182c90507ac48735
 
         # tab analysis
+        self.button_NodeSelect.clicked.connect(self.createnodes)
+        self.button_add.clicked.connect(self.addnode)
 
 
+
+        self.emitPoint = QgsMapToolEmitPoint(self.canvas)
+        self.emitPoint.canvasClicked.connect(self.getPoint)
         # tab report
+
+        # initialisation
+        self.loadLayers()
 
 
     def closeEvent(self, event):
@@ -124,6 +135,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         pass
 
 
+<<<<<<< HEAD
 
     def calculateBuffer(self):
         #takes incident as input
@@ -193,3 +205,56 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                     text = "network is built for %s points" % len(self.tied_points)
                     self.insertReport(text)
         return
+=======
+###
+# Node Input
+###
+    def createnodes(self):
+        #Create temp layer "Nodes"
+        layer=uf.getLegendLayerByName(self.iface,"Policemen")
+
+        nodes=uf.getLegendLayerByName(self.iface, 'Nodes')
+        if not nodes:
+            attribs = ["id"]
+            types = [QtCore.QVariant.String]
+            nodes=QgsVectorLayer('Point?crs=epsg:28992', 'Nodes', 'memory')
+            uf.addFields(nodes, ['id'], [QVariant.String])
+            uf.loadTempLayer(nodes)
+            nodes.setLayerName('Nodes')
+        nodes.startEditing()
+
+
+    def addnode(self):
+        # remember currently selected tool
+        self.userTool = self.canvas.mapTool()
+        # activate coordinate capture tool
+        self.canvas.setMapTool(self.emitPoint)
+
+
+    def getPoint(self, mapPoint, mouseButton):
+        # change tool so you don't get more than one POI
+        self.canvas.unsetMapTool(self.emitPoint)
+        self.canvas.setMapTool(self.userTool)
+        #Get the click
+        if mapPoint:
+            # here do something with the point
+            nodes = uf.getLegendLayerByName(self.iface, "Nodes")
+            pr=nodes.dataProvider()
+
+
+            fet=QgsFeature()
+            fet.setGeometry(QgsGeometry.fromPoint(mapPoint))
+            #fet.setAttributes(['1']), no setting attributes for now
+            pr.addFeatures([fet])
+
+            nodes.commitChanges()
+            self.refreshCanvas(nodes)
+
+
+    #refresh canvas after changes
+    def refreshCanvas(self, layer):
+        if self.canvas.isCachingEnabled():
+            layer.setCacheImage(None)
+        else:
+            self.canvas.refresh()
+>>>>>>> 4657de90cd6eaea8b1281af0182c90507ac48735
