@@ -63,10 +63,15 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.comboBox_Rank.activated.connect(self.setSelectedObject)
         self.comboBox_Time.activated.connect(self.setSelectedObject)
 
-        # tab analysis
 
+        # tab analysis
+        self.button_NodeSelect.clicked.connect(self.createnodes)
+        #self.button_add.clicked.connect(self.addnode)
 
         # tab report
+
+        # initialisation
+        self.loadLayers()
 
 
     def closeEvent(self, event):
@@ -118,4 +123,28 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     def setSelectedObject(self):
         pass
+
+
+###
+# Node Input
+###
+    def createnodes(self):
+        layer=uf.getLegendLayerByName(self.iface,"Policemen")
+
+        nodes=uf.getLegendLayerByName(self.iface, 'Nodes')
+        if not nodes:
+            attribs = ["id"]
+            types = [QtCore.QVariant.String]
+            nodes=uf.createTempLayer("Nodes", "POINT", layer.crs().postgisSrid(), attribs, types)
+            uf.loadTempLayer(nodes)
+            nodes.setLayerName('Nodes')
+
+
+
+
+    def addnode(self):
+        # remember currently selected tool
+        self.userTool = self.canvas.mapTool()
+        # activate coordinate capture tool
+        self.canvas.setMapTool(self.emitPoint)
 
