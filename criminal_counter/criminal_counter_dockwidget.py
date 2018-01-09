@@ -69,7 +69,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # tab analysis
         self.button_NodeSelect.clicked.connect(self.createnodes)
         self.button_add.clicked.connect(self.addnode)
-        self.button_substract.clicked.connect(self.removenode)
+        self.button_subtract.clicked.connect(self.removenode)
         self.button_calculate.clicked.connect(self.calculation)
 
 
