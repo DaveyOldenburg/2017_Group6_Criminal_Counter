@@ -22,6 +22,7 @@
 """
 
 import os
+import random
 
 from qgis.core import *
 from qgis.utils import iface
@@ -252,7 +253,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         if self.network_layer:
             # get the points to be used as origin and destination
             # in this case gets the centroid of the selected features
-            selected_sources=self.network_layer
+            selected_sources=self.network_layer.selectedFeatures()
             source_points = [feature.geometry().centroid().asPoint() for feature in selected_sources]
             # build the graph including these points
             if len(source_points) > 1:
@@ -267,11 +268,49 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
         police = uf.getLegendLayerByName(self.iface, "Policemen")
         # origin and destination must be in the set of tied_points
+
+        nodepoints=nodes.getFeatures()
+        policepoints=police.getFeatures()
+
+
+
+        roads = uf.getLegendLayerByName(self.iface, "Roads_rotterdamcut")
+        provider = roads.dataProvider()
+
+        spIndex = QgsSpatialIndex()  # create spatial index object
+
+        feat = QgsFeature()
+        fit = provider.getFeatures()  # gets all features in layer
+
+        # insert features to index
+        while fit.nextFeature(feat):
+            spIndex.insertFeature(feat)
+
+        for feature in nodepoints:
+            geom1 = feature.geometry()
+            xy=geom1.asPoint()
+            pt1=QgsPoint(xy[0],xy[1])
+            break
+
+        for feature in policepoints:
+            geom2 = feature.geometry()
+            xy = geom2.asPoint()
+            pt2 = QgsPoint(xy[0], xy[1])
+            break
+        # QgsSpatialIndex.nearestNeighbor (QgsPoint point, int neighbors)
+        nearestId1 = spIndex.nearestNeighbor(pt1, 1)  # we need only one neighbour
+        nearestId2 = spIndex.nearestNeighbor(pt2, 1)
+        ids=nearestId1+nearestId2
+
+        roads.setSelectedFeatures(ids)
+
+
+        self.buildNetwork()
+
         options = len(self.tied_points)
+
         if options > 1:
             # origin and destination are given as an index in the tied_points list
-            start=nodes[0]
-            end=police[0]
 
 
 
