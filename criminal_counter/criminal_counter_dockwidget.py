@@ -241,7 +241,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         nodes.commitChanges()
         self.refreshCanvas(nodes)
 
-<<<<<<< HEAD
+
 
 
 
@@ -262,8 +262,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
 
 
-=======
->>>>>>> dffe50f947a0a132e058934476414b44eb227a28
     def calculation(self):
 
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
