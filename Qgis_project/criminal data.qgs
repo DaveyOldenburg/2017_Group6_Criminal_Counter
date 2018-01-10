@@ -20,9 +20,6 @@
     <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Checked" id="brtachtergrondkaartgrijs20180109193400789" source="tileMatrixSet=EPSG:28992&amp;crs=EPSG:28992&amp;layers=brtachtergrondkaartgrijs&amp;styles=default&amp;format=image/png&amp;url=https://geodata.nationaalgeoregister.nl/wmts?VERSION%3D1.0.0%26request%3DGetCapabilities" name="brtachtergrondkaartgrijs">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Unchecked" id="OpenStreetMap20171215122504056" source="&lt;GDAL_WMS>&#xd;&#xa;  &lt;Service name=&quot;TMS&quot;>&#xd;&#xa;    &lt;ServerUrl>http://tile.openstreetmap.org/${z}/${x}/${y}.png&lt;/ServerUrl>&#xd;&#xa;  &lt;/Service>&#xd;&#xa;  &lt;DataWindow>&#xd;&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xd;&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xd;&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xd;&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xd;&#xa;    &lt;TileLevel>19&lt;/TileLevel>&#xd;&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xd;&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xd;&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xd;&#xa;  &lt;/DataWindow>&#xd;&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xd;&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xd;&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xd;&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xd;&#xa;  &lt;Cache />&#xd;&#xa;&lt;/GDAL_WMS>&#xd;&#xa;" name="OpenStreetMap">
-      <customproperties/>
-    </layer-tree-layer>
     <layer-tree-layer expanded="0" providerKey="ogr" checked="Qt::Checked" id="Buildings_Rotterdamcut420171215121839805" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/Qgis_project/Buildings_Rotterdamcut4.shp" name="Buildings_Rotterdamcut4">
       <customproperties/>
     </layer-tree-layer>
@@ -31,10 +28,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>89822.10849971052084584</xmin>
-      <ymin>433729.37630014569731429</ymin>
-      <xmax>99750.13999408956442494</xmax>
-      <ymax>438823.0840647712466307</ymax>
+      <xmin>92723.71442690929688979</xmin>
+      <ymin>435230.02722607139730826</ymin>
+      <xmax>93969.01998373506648932</xmax>
+      <ymax>436371.26333834655815735</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -54,7 +51,9 @@
     <layer_coordinate_transform_info>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Policestations20171215121511159"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OpenStreetMap20171215122504056"/>
+      <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nodes20180110132919159"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Roads_rotterdamcut20171213153553725"/>
+      <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nodes20180110132429791"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="brtachtergrondkaartgrijs20180109193400789"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Buildings_Rotterdamcut420171215121839805"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Incidents20180108174112924"/>
@@ -67,7 +66,6 @@
       <item>Policemen20171215121508642</item>
       <item>Policestations20171215121511159</item>
       <item>Buildings_Rotterdamcut420171215121839805</item>
-      <item>OpenStreetMap20171215122504056</item>
       <item>Incidents20180108174112924</item>
       <item>brtachtergrondkaartgrijs20180109193400789</item>
     </custom-order>
@@ -96,11 +94,6 @@
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="brtachtergrondkaartgrijs" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="brtachtergrondkaartgrijs20180109193400789" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OpenStreetMap" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OpenStreetMap20171215122504056" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Buildings_Rotterdamcut4" showFeatureCount="0">
@@ -909,6 +902,12 @@ def my_form_open(dialog, layer, feature):
       <previewExpression></previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>4.4715826757782855</xmin>
+        <ymin>51.90727391022170423</ymin>
+        <xmax>4.49383871083218622</xmax>
+        <ymax>51.9220295249488899</ymax>
+      </extent>
       <id>Incidents20180108174112924</id>
       <datasource>./Incidents.shp</datasource>
       <keywordList>
@@ -973,7 +972,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="10"/>
+              <prop k="size" v="8"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -1245,75 +1244,13 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-      <extent>
-        <xmin>-20037508.33999999985098839</xmin>
-        <ymin>-20037508.33999999985098839</ymin>
-        <xmax>20037508.33999999985098839</xmax>
-        <ymax>20037508.33999999985098839</ymax>
-      </extent>
-      <id>OpenStreetMap20171215122504056</id>
-      <datasource>&lt;GDAL_WMS>&#xd;
-  &lt;Service name="TMS">&#xd;
-    &lt;ServerUrl>http://tile.openstreetmap.org/${z}/${x}/${y}.png&lt;/ServerUrl>&#xd;
-  &lt;/Service>&#xd;
-  &lt;DataWindow>&#xd;
-    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xd;
-    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xd;
-    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xd;
-    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xd;
-    &lt;TileLevel>19&lt;/TileLevel>&#xd;
-    &lt;TileCountX>1&lt;/TileCountX>&#xd;
-    &lt;TileCountY>1&lt;/TileCountY>&#xd;
-    &lt;YOrigin>top&lt;/YOrigin>&#xd;
-  &lt;/DataWindow>&#xd;
-  &lt;Projection>EPSG:3857&lt;/Projection>&#xd;
-  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xd;
-  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xd;
-  &lt;BandsCount>3&lt;/BandsCount>&#xd;
-  &lt;Cache />&#xd;
-&lt;/GDAL_WMS>&#xd;
-</datasource>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>OpenStreetMap</layername>
-      <srs>
-        <spatialrefsys>
-          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
-          <srsid>3857</srsid>
-          <srid>3857</srid>
-          <authid>EPSG:3857</authid>
-          <description>WGS 84 / Pseudo Mercator</description>
-          <projectionacronym>merc</projectionacronym>
-          <ellipsoidacronym>WGS84</ellipsoidacronym>
-          <geographicflag>false</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <customproperties>
-        <property key="identify/format" value="Value"/>
-        <property key="ol_layer_type" value="OpenStreetMap"/>
-      </customproperties>
-      <provider>gdal</provider>
-      <noData>
-        <noDataList bandNo="1" useSrcNoData="0"/>
-        <noDataList bandNo="2" useSrcNoData="0"/>
-        <noDataList bandNo="3" useSrcNoData="0"/>
-      </noData>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
-      </map-layer-style-manager>
-      <pipe>
-        <rasterrenderer opacity="1" alphaBand="-1" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
-          <rasterTransparency/>
-        </rasterrenderer>
-        <brightnesscontrast brightness="0" contrast="0"/>
-        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="2"/>
-      </pipe>
-      <blendMode>0</blendMode>
-    </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>91414.16038582818873692</xmin>
+        <ymin>434076.50935912429122254</ymin>
+        <xmax>94001.39737822930328548</xmax>
+        <ymax>438140.5988528550369665</ymax>
+      </extent>
       <id>Policemen20171215121508642</id>
       <datasource>./Policemen.shp</datasource>
       <keywordList>
@@ -1551,6 +1488,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description=".SF NS Text,13,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -2145,10 +2083,10 @@ def my_form_open(dialog, layer, feature):
       <DefaultSnapToleranceUnit type="int">2</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
         <value>Buildings_Rotterdamcut420171215121839805</value>
+        <value>Incidents20180108174112924</value>
         <value>Policemen20171215121508642</value>
         <value>Policestations20171215121511159</value>
         <value>Roads_rotterdamcut20171213153553725</value>
-        <value>Incidents20180108174112924</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
@@ -2161,10 +2099,10 @@ def my_form_open(dialog, layer, feature):
       <AvoidIntersectionsList type="QStringList"/>
       <LayerSnappingToleranceUnitList type="QStringList">
         <value>2</value>
-        <value>2</value>
-        <value>2</value>
-        <value>2</value>
         <value>1</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
         <value>to_vertex_and_segment</value>
