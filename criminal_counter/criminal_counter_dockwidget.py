@@ -27,6 +27,7 @@ from qgis.core import *
 from qgis.utils import iface
 from PyQt4 import QtGui, uic
 from PyQt4.QtCore import pyqtSignal, QVariant
+from qgis.networkanalysis import *
 
 from qgis.gui import *
 import processing
@@ -67,6 +68,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.button_cancel.clicked.connect(self.cancel)
 
         # tab analysis
+        self.graph = QgsGraph()
+        self.tied_points = []
         self.button_NodeSelect.clicked.connect(self.createnodes)
         self.button_add.clicked.connect(self.addnode)
         self.button_subtract.clicked.connect(self.removenode)
@@ -228,10 +231,61 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.refreshCanvas(nodes)
 
 
+
+
+
+
+    def buildNetwork(self):
+        self.network_layer = uf.getLegendLayerByName(self.iface, "Roads_rotterdamcut")
+        if self.network_layer:
+            # get the points to be used as origin and destination
+            # in this case gets the centroid of the selected features
+            selected_sources=self.network_layer
+            source_points = [feature.geometry().centroid().asPoint() for feature in selected_sources]
+            # build the graph including these points
+            if len(source_points) > 1:
+                self.graph, self.tied_points = uf.makeUndirectedGraph(self.network_layer, source_points)
+                # the tied points are the new source_points on the graph
+        return
+
+
+
     def calculation(self):
-        
+
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
-        police= uf.getLegendLayerByName(self.iface, "Policemen")
+        police = uf.getLegendLayerByName(self.iface, "Policemen")
+        # origin and destination must be in the set of tied_points
+        options = len(self.tied_points)
+        if options > 1:
+            # origin and destination are given as an index in the tied_points list
+            start=nodes[0]
+            end=police[0]
+
+
+
+
+            origin = 0
+            destination = random.randint(1, options - 1)
+            # calculate the shortest path for the given origin and destination
+            path = uf.calculateRouteDijkstra(self.graph, self.tied_points, origin, destination)
+            # store the route results in temporary layer called "Routes"
+            routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
+            # create one if it doesn't exist
+            if not routes_layer:
+                attribs = ['id']
+                types = [QtCore.QVariant.String]
+                routes_layer = uf.createTempLayer('Routes', 'LINESTRING', self.network_layer.crs().postgisSrid(),
+                                                  attribs, types)
+                uf.loadTempLayer(routes_layer)
+
+            uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
+
+
+
+
+
+
+
 
         
     #refresh canvas after changes
