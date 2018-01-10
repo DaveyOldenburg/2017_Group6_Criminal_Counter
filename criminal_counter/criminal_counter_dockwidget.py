@@ -327,6 +327,14 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 types = [QtCore.QVariant.String]
                 routes_layer = uf.createTempLayer('Routes', 'LINESTRING', self.network_layer.crs().postgisSrid(),
                                                   attribs, types)
+
+                #change layer styles
+                symbols = routes_layer.rendererV2().symbols()
+                symbol = symbols[0]
+                #color isnt working for some reason?
+                #symbol.setColor(QColor(155, 102, 102))
+                symbol.setWidth(1.5)
+
                 uf.loadTempLayer(routes_layer)
 
             uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
