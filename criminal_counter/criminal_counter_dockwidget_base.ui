@@ -31,7 +31,7 @@
     <item row="1" column="0">
      <widget class="QTabWidget" name="tab_Main">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_Case">
        <attribute name="title">
@@ -198,13 +198,13 @@
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QTableView" name="table_Node">
+       <widget class="QTableWidget" name="table_Node">
         <property name="geometry">
          <rect>
           <x>20</x>
           <y>60</y>
           <width>321</width>
-          <height>81</height>
+          <height>111</height>
          </rect>
         </property>
        </widget>
@@ -212,7 +212,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>200</y>
+          <y>240</y>
           <width>61</width>
           <height>16</height>
          </rect>
@@ -225,9 +225,9 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>220</y>
+          <y>260</y>
           <width>321</width>
-          <height>271</height>
+          <height>231</height>
          </rect>
         </property>
        </widget>
@@ -235,7 +235,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>150</y>
+          <y>190</y>
           <width>295</width>
           <height>32</height>
          </rect>
