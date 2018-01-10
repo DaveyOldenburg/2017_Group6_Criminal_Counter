@@ -69,7 +69,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # tab analysis
         self.button_NodeSelect.clicked.connect(self.createnodes)
         self.button_add.clicked.connect(self.addnode)
-        self.button_subtract.clicked.connect(self.removenode)
+        self.button_subtract.clicked.connect(self.removeNodefromTable)
         self.button_calculate.clicked.connect(self.calculation)
 
 
@@ -175,7 +175,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
     def createnodes(self):
         #Create temp layer "Nodes"
         #layer=uf.getLegendLayerByName(self.iface,"Policemen")
-
         nodes=uf.getLegendLayerByName(self.iface, 'Nodes')
         if not nodes:
             attribs = ["id"]
@@ -186,7 +185,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             nodes.setLayerName('Nodes')
         nodes.startEditing()
 
-
     def addnode(self):
         # remember currently selected tool
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
@@ -195,47 +193,58 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # activate coordinate capture tool
         self.canvas.setMapTool(self.emitPoint)
 
-
     def getPoint(self, mapPoint, mouseButton):
         # change tool so you don't get more than one POI
         self.canvas.unsetMapTool(self.emitPoint)
         self.canvas.setMapTool(self.userTool)
-        #Get the click
         if mapPoint:
             # here do something with the point
             nodes = uf.getLegendLayerByName(self.iface, "Nodes")
             pr=nodes.dataProvider()
-
-
             fet=QgsFeature()
             fet.setGeometry(QgsGeometry.fromPoint(mapPoint))
-            #fet.setAttributes(['1']), no setting attributes for now
             pr.addFeatures([fet])
-
             nodes.commitChanges()
             self.refreshCanvas(nodes)
+            self.updateNodeTable(nodes)
 
+    def updateNodeTable(self, layer):
+        # update the node table and visulize the node in the table
+        self.table_Node.clear()
+        lst_nodeID = []
+        for feature in layer.getFeatures():
+            lst_nodeID.append(feature.id())
+        self.table_Node.setColumnCount(1)
+        self.table_Node.setHorizontalHeaderLabels(["Item ID"])
+        self.table_Node.setRowCount(len(lst_nodeID))
+        for i, item in enumerate(lst_nodeID):
+            self.table_Node.setItem(i, 0, QtGui.QTableWidgetItem(str(item)))
+        self.table_Node.resizeRowsToContents()
 
+    def removeNodefromTable(self):
+        # remove selected node from the table
+        items = self.table_Node.selectedItems()
+        for item in items:
+            nodeID = int(item.text())
+            self.deletenode(nodeID)
+            self.table_Node.removeRow(item.row())
+            self.table_Node.resizeRowsToContents()
 
-    #NOT FINISHED
-    def removenode(self):  #nodeId
-        #removes selected node from list, given nodeId
+    def deletenode(self, id):  #nodeId
+        # delete node with a specific id
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
         nodes.startEditing()
-        nodes.deleteFeature(2)
+        nodes.deleteFeature(id)
         nodes.commitChanges()
-
         self.refreshCanvas(nodes)
-
 
     def calculation(self):
         
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
         police= uf.getLegendLayerByName(self.iface, "Policemen")
 
-        
-    #refresh canvas after changes
     def refreshCanvas(self, layer):
+        # refresh canvas after changes
         if self.canvas.isCachingEnabled():
             layer.setCacheImage(None)
         else:
