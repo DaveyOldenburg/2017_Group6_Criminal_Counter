@@ -179,7 +179,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>Node Selection</string>
+         <string>Create Nodes</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_10">
