@@ -76,6 +76,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.button_add.clicked.connect(self.addnode)
         self.button_subtract.clicked.connect(self.removeNodefromTable)
         self.button_calculate.clicked.connect(self.calculation)
+        self.button_undo.clicked.connect(self.deleteRoutes)
 
 
         self.emitPoint = QgsMapToolEmitPoint(self.canvas)
@@ -186,9 +187,24 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             types = [QtCore.QVariant.String]
             nodes=QgsVectorLayer('Point?crs=epsg:28992', 'Nodes', 'memory')
             uf.addFields(nodes, ['id'], [QVariant.String])
+            #Setting color of the layer
+
+            svgStyle = {}
+            svgStyle['fill'] = '#ff0000'
+            svgStyle['name'] = 'backgrounds/background_forbidden.svg'
+            svgStyle['outline'] = '#ff0000'
+            svgStyle['outline-width'] = '1'
+            svgStyle['size'] = '10'
+            notes = QgsSvgMarkerSymbolLayerV2.create(svgStyle)
+            nodes.rendererV2().symbols()[0].changeSymbolLayer(0, notes)
+
             uf.loadTempLayer(nodes)
             nodes.setLayerName('Nodes')
         nodes.startEditing()
+
+
+
+
 
     def addnode(self):
         # remember currently selected tool
@@ -333,6 +349,17 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 symbol.setWidth(1.5)
                 uf.loadTempLayer(routes_layer)
             uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
+
+
+
+    def deleteRoutes(self):
+        routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
+        if routes_layer:
+            ids = uf.getAllFeatureIds(routes_layer)
+            routes_layer.startEditing()
+            for id in ids:
+                routes_layer.deleteFeature(id)
+            routes_layer.commitChanges()
 
 
 
