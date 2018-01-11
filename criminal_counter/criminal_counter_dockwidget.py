@@ -303,7 +303,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                     break
             return nearest_police
 
-
     def getShortestPath(self, node, police):
         # obtain the shortest path between a given node and a given policeman
         roads = uf.getLegendLayerByName(self.iface, "Roads_rotterdamcut")
@@ -341,9 +340,9 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             if not routes_layer:
                 attribs = ['id']
                 types = [QtCore.QVariant.String]
-                routes_layer = uf.createTempLayer('Routes', 'LINESTRING',self.network_layer.crs().postgisSrid(),
+                routes_layer = uf.createTempLayer('Routes', 'LINESTRING', self.network_layer.crs().postgisSrid(),
                                                   attribs, types)
-                #change layer styles
+                # change layer styles
                 symbols = routes_layer.rendererV2().symbols()
                 symbol = symbols[0]
                 symbol.setColor(QColor("brown"))
@@ -351,8 +350,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 uf.loadTempLayer(routes_layer)
                 routes_layer.setLayerName('Routes')
             uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
-            self.refreshCanvas()
-        roads.setSelectedFeatures([])
+            # self.refreshCanvas()
+        # roads.setSelectedFeatures([])
 
 
 
