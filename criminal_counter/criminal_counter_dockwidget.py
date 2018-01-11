@@ -76,6 +76,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.button_add.clicked.connect(self.addnode)
         self.button_subtract.clicked.connect(self.removeNodefromTable)
         self.button_calculate.clicked.connect(self.calculation)
+        self.button_undo.clicked.connect(self.deleteRoutes)
 
 
         self.emitPoint = QgsMapToolEmitPoint(self.canvas)
@@ -186,9 +187,24 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             types = [QtCore.QVariant.String]
             nodes=QgsVectorLayer('Point?crs=epsg:28992', 'Nodes', 'memory')
             uf.addFields(nodes, ['id'], [QVariant.String])
+            #Setting color of the layer
+
+            svgStyle = {}
+            svgStyle['fill'] = '#ff0000'
+            svgStyle['name'] = 'backgrounds/background_forbidden.svg'
+            svgStyle['outline'] = '#ff0000'
+            svgStyle['outline-width'] = '1'
+            svgStyle['size'] = '10'
+            notes = QgsSvgMarkerSymbolLayerV2.create(svgStyle)
+            nodes.rendererV2().symbols()[0].changeSymbolLayer(0, notes)
+
             uf.loadTempLayer(nodes)
             nodes.setLayerName('Nodes')
         nodes.startEditing()
+
+
+
+
 
     def addnode(self):
         # remember currently selected tool
@@ -243,19 +259,16 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         nodes.commitChanges()
         self.refreshCanvas(nodes)
 
-
-
-
-
-
-
-    def buildNetwork(self):
+###
+# Route Creation
+###
+    def buildNetwork(self, policePoint):
         self.network_layer = uf.getLegendLayerByName(self.iface, "Roads_rotterdamcut")
         if self.network_layer:
             # get the points to be used as origin and destination
             # in this case gets the centroid of the selected features
             selected_sources=self.network_layer.selectedFeatures()
-            source_points = [feature.geometry().centroid().asPoint() for feature in selected_sources]
+            source_points = [feature.geometry().centroid().asPoint() for feature in selected_sources]+[policePoint]
             # build the graph including these points
             if len(source_points) > 1:
                 self.graph, self.tied_points = uf.makeUndirectedGraph(self.network_layer, source_points)
@@ -290,6 +303,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                     break
             return nearest_police
 
+
     def getShortestPath(self, node, police):
         # obtain the shortest path between a given node and a given policeman
         roads = uf.getLegendLayerByName(self.iface, "Roads_rotterdamcut")
@@ -305,12 +319,15 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         pt_node = QgsPoint(xy_node[0], xy_node[1])
         xy_police = police.geometry().asPoint()
         pt_police = QgsPoint(xy_police[0], xy_police[1])
+
         # QgsSpatialIndex.nearestNeighbor (QgsPoint point, int neighbors)
         nearestId1 = spIndex.nearestNeighbor(pt_node, 1)
-        nearestId2 = spIndex.nearestNeighbor(pt_police, 1)
-        ids = nearestId1 + nearestId2
+
+        ids = nearestId1
         roads.setSelectedFeatures(ids)
-        self.buildNetwork()
+
+        self.buildNetwork(pt_police)
+
         options = len(self.tied_points)
         if options > 1:
             # origin and destination are given as an index in the tied_points list
@@ -333,6 +350,20 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 symbol.setWidth(1.5)
                 uf.loadTempLayer(routes_layer)
             uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
+
+        roads.setSelectedFeatures([])
+
+
+
+
+    def deleteRoutes(self):
+        routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
+        if routes_layer:
+            ids = uf.getAllFeatureIds(routes_layer)
+            routes_layer.startEditing()
+            for id in ids:
+                routes_layer.deleteFeature(id)
+            routes_layer.commitChanges()
 
 
 
