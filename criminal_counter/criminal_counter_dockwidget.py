@@ -349,8 +349,9 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 symbol.setColor(QColor("brown"))
                 symbol.setWidth(1.5)
                 uf.loadTempLayer(routes_layer)
+                routes_layer.setLayerName('Routes')
             uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
-
+            self.refreshCanvas()
         roads.setSelectedFeatures([])
 
 
@@ -358,12 +359,14 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     def deleteRoutes(self):
         routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
-        if routes_layer:
-            ids = uf.getAllFeatureIds(routes_layer)
-            routes_layer.startEditing()
-            for id in ids:
-                routes_layer.deleteFeature(id)
-            routes_layer.commitChanges()
+        nodes = uf.getLegendLayerByName(self.iface, "Nodes")
+
+        QgsMapLayerRegistry.instance().removeMapLayer(routes_layer.id())
+        QgsMapLayerRegistry.instance().removeMapLayer(nodes.id())
+        self.table_Node.clear()
+        self.table_PoliceJob.clear()
+        self.refreshCanvas()
+
 
 
 
