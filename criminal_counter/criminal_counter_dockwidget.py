@@ -306,8 +306,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
         # QgsSpatialIndex.nearestNeighbor (QgsPoint point, int neighbors)
         nearestId1 = spIndex.nearestNeighbor(pt_node, 1)
-        #nearestId2 = spIndex.nearestNeighbor(pt_police, 1)
-        ids = nearestId1 #+ nearestId2
+
+        ids = nearestId1
         roads.setSelectedFeatures(ids)
 
         self.buildNetwork(pt_police)
