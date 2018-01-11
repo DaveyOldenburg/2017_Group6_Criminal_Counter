@@ -296,7 +296,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             feature = QgsFeature()
             fit = provider.getFeatures()
             while fit.nextFeature(feature):
-                police_index.insertFeature(feature)
+                if feature.attributes()[2] == "Yes":
+                    police_index.insertFeature(feature)
             xy_node = point.geometry().asPoint()
             pt_node = QgsPoint(xy_node[0], xy_node[1])
             nearest_policeID = police_index.nearestNeighbor(pt_node, 1)[0]
