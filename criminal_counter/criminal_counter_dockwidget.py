@@ -278,10 +278,14 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
     def calculation(self):
         # calculate the nearest policeman and shortest path for each node selected by the user
         nodes_layer = uf.getLegendLayerByName(self.iface, "Nodes")
+        self.table_PoliceJob.clear()
+        self.table_PoliceJob.setColumnCount(2)
+        self.table_PoliceJob.setHorizontalHeaderLabels(["Policeman","will go to the node"])
         if nodes_layer:
             for node in nodes_layer.getFeatures():
                 policeman = self.getNearestPoliceman(node)
                 self.getShortestPath(node, policeman)
+                self.writeJobTable(node, policeman)
 
     def getNearestPoliceman(self, point):
         # find a nearest policeman for a given point(node)
@@ -351,24 +355,31 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 uf.loadTempLayer(routes_layer)
                 routes_layer.setLayerName('Routes')
             uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
-            self.refreshCanvas()
-        roads.setSelectedFeatures([])
 
 
+    def writeJobTable(self, point, policeman):
+        # write the assignment of policeman to the list
+        job_info = []
+        job_info.append("policeman " + policeman.attributes()[1] + " will go to the node " + str(point.id()))
+        currentRow = self.table_PoliceJob.rowCount()
+        self.table_PoliceJob.insertRow(currentRow)
+        self.table_PoliceJob.setItem(currentRow,0,QtGui.QTableWidgetItem(policeman.attributes()[1]))
+        self.table_PoliceJob.setItem(currentRow,1,QtGui.QTableWidgetItem(str(point.id())))
+        self.table_PoliceJob.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.ResizeToContents)
+        self.table_PoliceJob.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.Stretch)
+        self.table_PoliceJob.resizeRowsToContents()
 
 
     def deleteRoutes(self):
         routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
-
         QgsMapLayerRegistry.instance().removeMapLayer(routes_layer.id())
         QgsMapLayerRegistry.instance().removeMapLayer(nodes.id())
         self.table_Node.clear()
+        self.table_Node.setRowCount(0)
         self.table_PoliceJob.clear()
-        self.refreshCanvas()
-
-
-
+        self.table_PoliceJob.setRowCount(0)
+        self.canvas.refresh()
 
 
     def refreshCanvas(self, layer):
