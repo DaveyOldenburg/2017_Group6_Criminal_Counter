@@ -24,6 +24,7 @@
 import os
 import random
 
+from PyQt4.QtGui import *
 from qgis.core import *
 from qgis.utils import iface
 from PyQt4 import QtGui, uic
@@ -261,60 +262,58 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 # the tied points are the new source_points on the graph
         return
 
-
-
     def calculation(self):
+        # calculate the nearest policeman and shortest path for each node selected by the user
+        nodes_layer = uf.getLegendLayerByName(self.iface, "Nodes")
+        if nodes_layer:
+            for node in nodes_layer.getFeatures():
+                policeman = self.getNearestPoliceman(node)
+                self.getShortestPath(node, policeman)
 
-        nodes = uf.getLegendLayerByName(self.iface, "Nodes")
-        police = uf.getLegendLayerByName(self.iface, "Policemen")
-        # origin and destination must be in the set of tied_points
+    def getNearestPoliceman(self, point):
+        # find a nearest policeman for a given point(node)
+        policeman_layer = uf.getLegendLayerByName(self.iface, "Policemen")
+        if policeman_layer:
+            provider = policeman_layer.dataProvider()
+            police_index = QgsSpatialIndex()
+            feature = QgsFeature()
+            fit = provider.getFeatures()
+            while fit.nextFeature(feature):
+                police_index.insertFeature(feature)
+            xy_node = point.geometry().asPoint()
+            pt_node = QgsPoint(xy_node[0], xy_node[1])
+            nearest_policeID = police_index.nearestNeighbor(pt_node, 1)[0]
+            nearest_police = QgsFeature()
+            for feat in policeman_layer.getFeatures():
+                if feat.id() == nearest_policeID:
+                    nearest_police = feat
+                    break
+            return nearest_police
 
-        nodepoints=nodes.getFeatures()
-        policepoints=police.getFeatures()
-
-
-
+    def getShortestPath(self, node, police):
+        # obtain the shortest path between a given node and a given policeman
         roads = uf.getLegendLayerByName(self.iface, "Roads_rotterdamcut")
         provider = roads.dataProvider()
-
         spIndex = QgsSpatialIndex()  # create spatial index object
-
         feat = QgsFeature()
         fit = provider.getFeatures()  # gets all features in layer
-
         # insert features to index
         while fit.nextFeature(feat):
             spIndex.insertFeature(feat)
 
-        for feature in nodepoints:
-            geom1 = feature.geometry()
-            xy=geom1.asPoint()
-            pt1=QgsPoint(xy[0],xy[1])
-            break
-
-        for feature in policepoints:
-            geom2 = feature.geometry()
-            xy = geom2.asPoint()
-            pt2 = QgsPoint(xy[0], xy[1])
-            break
+        xy_node = node.geometry().asPoint()
+        pt_node = QgsPoint(xy_node[0], xy_node[1])
+        xy_police = police.geometry().asPoint()
+        pt_police = QgsPoint(xy_police[0], xy_police[1])
         # QgsSpatialIndex.nearestNeighbor (QgsPoint point, int neighbors)
-        nearestId1 = spIndex.nearestNeighbor(pt1, 1)  # we need only one neighbour
-        nearestId2 = spIndex.nearestNeighbor(pt2, 1)
-        ids=nearestId1+nearestId2
-
+        nearestId1 = spIndex.nearestNeighbor(pt_node, 1)
+        nearestId2 = spIndex.nearestNeighbor(pt_police, 1)
+        ids = nearestId1 + nearestId2
         roads.setSelectedFeatures(ids)
-
-
         self.buildNetwork()
-
         options = len(self.tied_points)
-
         if options > 1:
             # origin and destination are given as an index in the tied_points list
-
-
-
-
             origin = 0
             destination = random.randint(1, options - 1)
             # calculate the shortest path for the given origin and destination
@@ -325,23 +324,15 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             if not routes_layer:
                 attribs = ['id']
                 types = [QtCore.QVariant.String]
-                routes_layer = uf.createTempLayer('Routes', 'LINESTRING', self.network_layer.crs().postgisSrid(),
+                routes_layer = uf.createTempLayer('Routes', 'LINESTRING',self.network_layer.crs().postgisSrid(),
                                                   attribs, types)
-
                 #change layer styles
                 symbols = routes_layer.rendererV2().symbols()
                 symbol = symbols[0]
-                #color isnt working for some reason?
-                #symbol.setColor(QColor(155, 102, 102))
+                symbol.setColor(QColor("brown"))
                 symbol.setWidth(1.5)
-
                 uf.loadTempLayer(routes_layer)
-
             uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
-
-
-
-
 
 
 
