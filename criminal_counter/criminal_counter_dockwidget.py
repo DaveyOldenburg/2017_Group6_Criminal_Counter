@@ -354,11 +354,10 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 uf.loadTempLayer(routes_layer)
                 routes_layer.setLayerName('Routes')
             uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
-<<<<<<< HEAD
-=======
-            # self.refreshCanvas()
-        # roads.setSelectedFeatures([])
->>>>>>> 141b98d32ffb94b612fccd07ce7e0ca07d8ef812
+        roads.removeSelection()
+
+
+
 
 
     def writeJobTable(self, point, policeman):
