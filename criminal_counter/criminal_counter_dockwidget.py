@@ -248,18 +248,12 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     def removeNodefromTable(self):
         # remove selected node from the table
+        nodes = uf.getLegendLayerByName(self.iface, "Nodes")
         items = self.table_Node.selectedItems()
         for item in items:
             nodeID = int(item.text())
-            self.deletenode(nodeID)
-            #self.table_Node.removeRow(item.row())
-            #self.table_Node.resizeRowsToContents()
-
-    def deletenode(self, id):  #nodeId
-        # delete node with a specific id
-        nodes = uf.getLegendLayerByName(self.iface, "Nodes")
-        nodes.startEditing()
-        nodes.deleteFeature(id)
+            nodes.startEditing()
+            nodes.deleteFeature(nodeID)
         nodes.commitChanges()
         self.updateNodeTable(nodes)
         self.refreshCanvas(nodes)
