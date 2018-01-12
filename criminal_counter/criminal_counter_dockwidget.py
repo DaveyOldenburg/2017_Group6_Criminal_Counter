@@ -382,8 +382,12 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
     def deleteRoutes(self):
         routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
-        QgsMapLayerRegistry.instance().removeMapLayer(routes_layer.id())
-        QgsMapLayerRegistry.instance().removeMapLayer(nodes.id())
+        with edit(routes_layer):
+            listOfIds = [feat.id() for feat in routes_layer.getFeatures()]
+            routes_layer.deleteFeatures(listOfIds)
+        with edit(nodes):
+            listOfIds = [feat.id() for feat in nodes.getFeatures()]
+            nodes.deleteFeatures(listOfIds)
         self.table_Node.clear()
         self.table_Node.setRowCount(0)
         self.table_PoliceJob.clear()
