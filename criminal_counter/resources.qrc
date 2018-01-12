@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/plugins/criminal_counter" >
+    <qresource prefix="/" >
         <file>icon.png</file>
     </qresource>
 </RCC>

@@ -58,11 +58,15 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.iface = iface
         self.canvas = self.iface.mapCanvas()
 
+        self.plugin_dir = os.path.dirname(__file__)
+
+        self.iface.addProject(unicode(self.plugin_dir+"/data/criminal_data.qgs"))
+
         # tab case input
-        self.iface.projectRead.connect(self.loadLayers)
-        self.iface.newProjectCreated.connect(self.loadLayers)
-        self.iface.legendInterface().itemRemoved.connect(self.loadLayers)
-        self.iface.legendInterface().itemAdded.connect(self.loadLayers)
+        #self.iface.projectRead.connect(self.loadLayers)
+        #self.iface.newProjectCreated.connect(self.loadLayers)
+        #self.iface.legendInterface().itemRemoved.connect(self.loadLayers)
+        #self.iface.legendInterface().itemAdded.connect(self.loadLayers)
         self.tab_Main.setCurrentIndex(0)
         self.comboBox_Rank.activated.connect(self.setCasebyRank)
         self.comboBox_Time.activated.connect(self.setCasebyTime)
