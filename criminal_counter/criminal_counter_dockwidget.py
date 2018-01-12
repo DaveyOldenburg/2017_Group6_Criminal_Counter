@@ -76,7 +76,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # tab analysis
         self.graph = QgsGraph()
         self.tied_points = []
-        self.button_NodeSelect.clicked.connect(self.createnodes)
+        #self.button_NodeSelect.clicked.connect(self.createnodes)
         self.button_add.clicked.connect(self.addnode)
         self.button_subtract.clicked.connect(self.removeNodefromTable)
         self.button_calculate.clicked.connect(self.calculation)
