@@ -359,7 +359,11 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 symbol.setWidth(1.5)
                 uf.loadTempLayer(routes_layer)
                 routes_layer.setLayerName('Routes')
-            uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
+            prov = routes_layer.dataProvider()
+            fet = QgsFeature()
+            fet.setGeometry(QgsGeometry.fromPolyline(path))
+            prov.addFeatures([fet])
+            #uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
         roads.removeSelection()
 
 
