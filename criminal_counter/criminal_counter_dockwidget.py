@@ -151,13 +151,14 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         for feat in layer.getFeatures():
             att = feat.attributes()[6]
             if att == caseno:
+                case_info.append("case number: " + feat.attributes()[6])
                 case_info.append("rank: " + str(feat.attributes()[0]))
                 case_info.append("criminal id: " + str(feat.attributes()[1]))
                 case_info.append("criminal information: " + feat.attributes()[2])
                 case_info.append("case information: " + feat.attributes()[3])
                 case_info.append("case name: " + feat.attributes()[4])
                 case_info.append("time: " + feat.attributes()[5])
-                case_info.append("case number: " + feat.attributes()[6])
+
                 self.list_case.addItems(case_info)
                 layer.setSelectedFeatures([feat.id()])
                 break
@@ -251,8 +252,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         for item in items:
             nodeID = int(item.text())
             self.deletenode(nodeID)
-            self.table_Node.removeRow(item.row())
-            self.table_Node.resizeRowsToContents()
+            #self.table_Node.removeRow(item.row())
+            #self.table_Node.resizeRowsToContents()
 
     def deletenode(self, id):  #nodeId
         # delete node with a specific id
@@ -260,6 +261,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         nodes.startEditing()
         nodes.deleteFeature(id)
         nodes.commitChanges()
+        self.updateNodeTable(nodes)
         self.refreshCanvas(nodes)
 
 ###
