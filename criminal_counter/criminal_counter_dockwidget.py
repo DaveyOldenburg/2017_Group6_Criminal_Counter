@@ -411,7 +411,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         path = QtGui.QFileDialog.getSaveFileName(self, 'Save File', '', 'TXT(*.txt)')
         if path:
             f_output = open(path, "w")
-            for i in range(self.list_summary.count()-1):
+            for i in range(self.list_summary.count()):
                 content = self.list_summary.item(i).text()
                 f_output.write(content)
                 f_output.write("\n")
