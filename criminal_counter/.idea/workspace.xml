@@ -14,8 +14,8 @@
       <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-792">
-              <caret line="275" column="38" lean-forward="false" selection-start-line="275" selection-start-column="29" selection-end-line="275" selection-end-column="38" />
+            <state relative-caret-position="405">
+              <caret line="294" column="39" lean-forward="false" selection-start-line="294" selection-start-column="39" selection-end-line="294" selection-end-column="39" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
               </folding>
@@ -56,7 +56,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="769" />
     <option name="width" value="1159" />
     <option name="height" value="1038" />
@@ -151,7 +151,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -603,8 +603,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <caret line="275" column="38" lean-forward="false" selection-start-line="275" selection-start-column="29" selection-end-line="275" selection-end-column="38" />
+        <state relative-caret-position="405">
+          <caret line="294" column="39" lean-forward="false" selection-start-line="294" selection-start-column="39" selection-end-line="294" selection-end-column="39" />
           <folding>
             <element signature="e#1182#1191#0" expanded="true" />
           </folding>

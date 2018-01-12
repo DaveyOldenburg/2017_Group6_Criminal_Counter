@@ -283,6 +283,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
     def calculation(self):
         # calculate the nearest policeman and shortest path for each node selected by the user
         nodes_layer = uf.getLegendLayerByName(self.iface, "Nodes")
+        routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
         self.table_PoliceJob.clear()
         self.table_PoliceJob.setColumnCount(2)
         self.table_PoliceJob.setHorizontalHeaderLabels(["Policeman","will go to the node"])
@@ -291,6 +292,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 policeman = self.getNearestPoliceman(node)
                 self.getShortestPath(node, policeman)
                 self.writeJobTable(node, policeman)
+        self.refreshCanvas(routes_layer)
 
     def getNearestPoliceman(self, point):
         # find a nearest policeman for a given point(node)
