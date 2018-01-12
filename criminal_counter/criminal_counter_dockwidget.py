@@ -80,6 +80,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.button_undo.clicked.connect(self.deleteRoutes)
         self.emitPoint = QgsMapToolEmitPoint(self.canvas)
         self.emitPoint.canvasClicked.connect(self.getPoint)
+        self.button_StartCounter.clicked.connect(self.reportMessage)
         
         # tab report
         self.button_save.clicked.connect(self.saveReport)
