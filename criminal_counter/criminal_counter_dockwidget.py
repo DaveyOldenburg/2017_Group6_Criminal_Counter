@@ -182,29 +182,28 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 ###
 # Node Input
 ###
-    def createnodes(self):
+    #def createnodes(self):
         #Create temp layer "Nodes"
         #layer=uf.getLegendLayerByName(self.iface,"Policemen")
-        nodes=uf.getLegendLayerByName(self.iface, 'Nodes')
-        if not nodes:
-            attribs = ["id"]
-            types = [QtCore.QVariant.String]
-            nodes=QgsVectorLayer('Point?crs=epsg:28992', 'Nodes', 'memory')
-            uf.addFields(nodes, ['id'], [QVariant.String])
+        #nodes=uf.getLegendLayerByName(self.iface, 'Nodes')
+        #if not nodes:
+
+            #nodes=QgsVectorLayer('Point?crs=epsg:28992', 'Nodes', 'memory')
+            #uf.addFields(nodes, ['id'], [QVariant.String])
             #Setting color of the layer
 
-            svgStyle = {}
-            svgStyle['fill'] = '#ff0000'
-            svgStyle['name'] = 'backgrounds/background_forbidden.svg'
-            svgStyle['outline'] = '#ff0000'
-            svgStyle['outline-width'] = '1'
-            svgStyle['size'] = '10'
-            notes = QgsSvgMarkerSymbolLayerV2.create(svgStyle)
-            nodes.rendererV2().symbols()[0].changeSymbolLayer(0, notes)
+            #svgStyle = {}
+            #svgStyle['fill'] = '#ff0000'
+            #svgStyle['name'] = 'backgrounds/background_forbidden.svg'
+            #svgStyle['outline'] = '#ff0000'
+            #svgStyle['outline-width'] = '1'
+            #svgStyle['size'] = '10'
+            #notes = QgsSvgMarkerSymbolLayerV2.create(svgStyle)
+            #nodes.rendererV2().symbols()[0].changeSymbolLayer(0, notes)
 
-            uf.loadTempLayer(nodes)
-            nodes.setLayerName('Nodes')
-        nodes.startEditing()
+            #uf.loadTempLayer(nodes)
+            #nodes.setLayerName('Nodes')
+        #nodes.startEditing()
 
 
 
