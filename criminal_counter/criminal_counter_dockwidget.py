@@ -30,7 +30,7 @@ from qgis.utils import iface
 from PyQt4 import QtGui, uic
 from PyQt4.QtCore import pyqtSignal, QVariant
 from qgis.networkanalysis import *
-
+from time import gmtime, strftime
 from qgis.gui import *
 import processing
 import resources
