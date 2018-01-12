@@ -267,13 +267,13 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 ###
 # Route Creation
 ###
-    def buildNetwork(self, policePoint):
+    def buildNetwork(self, nodePoint, policePoint):
         self.network_layer = uf.getLegendLayerByName(self.iface, "Roads_rotterdamcut")
         if self.network_layer:
             # get the points to be used as origin and destination
             # in this case gets the centroid of the selected features
             selected_sources=self.network_layer.selectedFeatures()
-            source_points = [feature.geometry().centroid().asPoint() for feature in selected_sources]+[policePoint]
+            source_points = [nodePoint]+[policePoint]
             # build the graph including these points
             if len(source_points) > 1:
                 self.graph, self.tied_points = uf.makeUndirectedGraph(self.network_layer, source_points)
@@ -330,12 +330,12 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         pt_police = QgsPoint(xy_police[0], xy_police[1])
 
         # QgsSpatialIndex.nearestNeighbor (QgsPoint point, int neighbors)
-        nearestId1 = spIndex.nearestNeighbor(pt_node, 1)
+        #nearestId1 = spIndex.nearestNeighbor(pt_node, 1)
 
-        ids = nearestId1
-        roads.setSelectedFeatures(ids)
+        #ids = nearestId1
+        #roads.setSelectedFeatures(ids)
 
-        self.buildNetwork(pt_police)
+        self.buildNetwork(pt_node, pt_police)
 
         options = len(self.tied_points)
         if options > 1:
