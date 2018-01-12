@@ -63,30 +63,28 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.iface.addProject(unicode(self.plugin_dir+"/data/criminal_data.qgs"))
 
         # tab case input
-        #self.iface.projectRead.connect(self.loadLayers)
-        #self.iface.newProjectCreated.connect(self.loadLayers)
-        #self.iface.legendInterface().itemRemoved.connect(self.loadLayers)
-        #self.iface.legendInterface().itemAdded.connect(self.loadLayers)
         self.tab_Main.setCurrentIndex(0)
         self.comboBox_Rank.activated.connect(self.setCasebyRank)
         self.comboBox_Time.activated.connect(self.setCasebyTime)
         self.button_run.clicked.connect(self.runcase)
         self.button_cancel.clicked.connect(self.cancel)
-
+        self.caseID = -1
+        
         # tab analysis
         self.graph = QgsGraph()
         self.tied_points = []
-        #self.button_NodeSelect.clicked.connect(self.createnodes)
+        self.policelist = []
         self.button_add.clicked.connect(self.addnode)
         self.button_subtract.clicked.connect(self.removeNodefromTable)
         self.button_calculate.clicked.connect(self.calculation)
         self.button_undo.clicked.connect(self.deleteRoutes)
-
-
         self.emitPoint = QgsMapToolEmitPoint(self.canvas)
         self.emitPoint.canvasClicked.connect(self.getPoint)
+        
         # tab report
-
+        self.button_save.clicked.connect(self.saveReport)
+        self.button_clear.clicked.connect(self.clearReport)
+        
         # initialisation
         self.loadLayers()
 
@@ -147,6 +145,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         layer = uf.getLegendLayerByName(self.iface,"Incidents")
         self.list_case.clear()
         layer.setSelectedFeatures([])
+        self.caseID = caseno
         case_info = []
         for feat in layer.getFeatures():
             att = feat.attributes()[6]
@@ -179,36 +178,11 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.comboBox_Rank.clear()
         self.comboBox_Time.clear()
         self.loadLayers()
+        self.caseID = -1
 
 ###
 # Node Input
 ###
-    #def createnodes(self):
-        #Create temp layer "Nodes"
-        #layer=uf.getLegendLayerByName(self.iface,"Policemen")
-        #nodes=uf.getLegendLayerByName(self.iface, 'Nodes')
-        #if not nodes:
-
-            #nodes=QgsVectorLayer('Point?crs=epsg:28992', 'Nodes', 'memory')
-            #uf.addFields(nodes, ['id'], [QVariant.String])
-            #Setting color of the layer
-
-            #svgStyle = {}
-            #svgStyle['fill'] = '#ff0000'
-            #svgStyle['name'] = 'backgrounds/background_forbidden.svg'
-            #svgStyle['outline'] = '#ff0000'
-            #svgStyle['outline-width'] = '1'
-            #svgStyle['size'] = '10'
-            #notes = QgsSvgMarkerSymbolLayerV2.create(svgStyle)
-            #nodes.rendererV2().symbols()[0].changeSymbolLayer(0, notes)
-
-            #uf.loadTempLayer(nodes)
-            #nodes.setLayerName('Nodes')
-        #nodes.startEditing()
-
-
-
-
 
     def addnode(self):
         # remember currently selected tool
@@ -240,7 +214,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         for feature in layer.getFeatures():
             lst_nodeID.append(feature.id())
         self.table_Node.setColumnCount(1)
-        self.table_Node.setHorizontalHeaderLabels(["Item ID"])
+        self.table_Node.setHorizontalHeaderLabels(["Blockade No"])
         self.table_Node.setRowCount(len(lst_nodeID))
         for i, item in enumerate(lst_nodeID):
             self.table_Node.setItem(i, 0, QtGui.QTableWidgetItem(str(item)))
@@ -376,6 +350,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # write the assignment of policeman to the list
         job_info = []
         job_info.append("policeman " + policeman.attributes()[1] + " will go to the node " + str(point.id()))
+        self.policelist.append(policeman.attributes()[1])
         currentRow = self.table_PoliceJob.rowCount()
         self.table_PoliceJob.insertRow(currentRow)
         self.table_PoliceJob.setItem(currentRow,0,QtGui.QTableWidgetItem(policeman.attributes()[1]))
@@ -408,7 +383,41 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.table_PoliceJob.clear()
         self.table_PoliceJob.setRowCount(0)
         self.canvas.refresh()
+        self.policelist = []
 
+###
+# Report output
+###
+
+    def reportMessage(self):
+        # send a message to the user that order has been sent
+        QMessageBox.information(None, "Message:", "Your order has been sent successfully!")
+        self.tab_Main.setCurrentIndex(2)
+        self.writeReportList()
+
+    def writeReportList(self):
+        # write the criminal counter log info to the report list
+        counter_info = []
+        str_time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+        counter_info.append("on " + str_time + " (gmt)")
+        counter_info.append("the case no: " + str(self.caseID) + " was handled")
+        counter_info.append("following policemen executed this order:")
+        for policename in self.policelist:
+            counter_info.append(policename)
+        self.list_summary.addItems(counter_info)
+
+    def saveReport(self):
+        path = QtGui.QFileDialog.getSaveFileName(self, 'Save File', '', 'TXT(*.txt)')
+        if path:
+            f_output = open(path, "w")
+            for i in range(self.list_summary.count()-1):
+                content = self.list_summary.item(i).text()
+                f_output.write(content)
+                f_output.write("\n")
+            f_output.close()
+
+    def clearReport(self):
+        self.list_summary.clear()
 
     def refreshCanvas(self, layer):
         # refresh canvas after changes
