@@ -298,7 +298,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             fit = provider.getFeatures()
             while fit.nextFeature(feature):
                 if feature.attributes()[2] == "Yes":
-                    police_index.insertFeature(feature)
+                    if not feature.attributes()[4] == 0:
+                        police_index.insertFeature(feature)
             xy_node = point.geometry().asPoint()
             pt_node = QgsPoint(xy_node[0], xy_node[1])
             nearest_policeID = police_index.nearestNeighbor(pt_node, 1)[0]
@@ -306,7 +307,12 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             for feat in policeman_layer.getFeatures():
                 if feat.id() == nearest_policeID:
                     nearest_police = feat
+                    policeman_layer.startEditing()
+                    feat['Available2'] = 0
+                    policeman_layer.updateFeature(feat)
+                    policeman_layer.commitChanges()
                     break
+
             return nearest_police
 
     def getShortestPath(self, node, police):
@@ -382,12 +388,21 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
     def deleteRoutes(self):
         routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
+        policeman_layer = uf.getLegendLayerByName(self.iface, "Policemen")
         with edit(routes_layer):
             listOfIds = [feat.id() for feat in routes_layer.getFeatures()]
             routes_layer.deleteFeatures(listOfIds)
         with edit(nodes):
             listOfIds = [feat.id() for feat in nodes.getFeatures()]
             nodes.deleteFeatures(listOfIds)
+        with edit(policeman_layer):
+            for feature in policeman_layer.getFeatures():
+                if feature.attributes()[4] == 0:
+                    policeman_layer.startEditing()
+                    feature['Available2'] = 1
+                    policeman_layer.updateFeature(feature)
+                    #policeman_layer.commitChanges()
+
         self.table_Node.clear()
         self.table_Node.setRowCount(0)
         self.table_PoliceJob.clear()
