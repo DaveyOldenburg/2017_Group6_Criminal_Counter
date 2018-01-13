@@ -106,6 +106,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         incident_layernm = "Incidents"
         incident_layer = uf.getLegendLayerByName(self.iface, incident_layernm)
         self.setOriginalCombox(incident_layer)
+        self.canvas.zoomScale(40000.0)
 
     def setOriginalCombox(self, layer):
         # initialize comboboxes based on order of rank or time
@@ -184,6 +185,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.list_case.clear()
         self.loadLayers()
         self.caseID = -1
+        self.canvas.zoomScale(40000.0)
 
 ###
 # Node Input
@@ -265,7 +267,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.table_PoliceJob.clear()
         self.table_PoliceJob.setColumnCount(2)
         self.table_PoliceJob.setHorizontalHeaderLabels(["Policeman","will go to the node"])
-        if not nodes:
+        if self.table_Node.rowCount() == 0:
             QMessageBox.information(None, "Warning:", "Please create the blockades first!")
             return
         for node in nodes:
@@ -385,6 +387,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.table_Node.setRowCount(0)
         self.table_PoliceJob.clear()
         self.table_PoliceJob.setRowCount(0)
+        self.table_PoliceJob.setColumnCount(2)
+        self.table_PoliceJob.setHorizontalHeaderLabels(["Policeman","will go to the node"])
         self.canvas.refresh()
         self.policelist = []
 
@@ -397,7 +401,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         if self.caseID == -1 or self.policelist == []:
             QMessageBox.information(None, "Warning:", "Please create routes first!")
             return
-        QMessageBox.information(None, "Message:", "Your order has been sent successfully!")
+        QMessageBox.information(None, "Message:", "Your command has been sent successfully!")
         self.tab_Main.setCurrentIndex(2)
         self.writeReportList()
 
@@ -421,12 +425,14 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 f_output.write(content)
                 f_output.write("\n")
             f_output.close()
+            QMessageBox.information(None, "Message:", "Report has been saved successfully!")
 
 
     def saveMap(self):
         path = QtGui.QFileDialog.getSaveFileName(self, 'Save File', '', 'PNG(*.png)')
         if path != '':
             self.canvas.saveAsImage(path,None,"PNG")
+            QMessageBox.information(None, "Message:", "Map has been saved successfully!")
 
     def clearReport(self):
         self.list_summary.clear()
@@ -437,6 +443,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.list_case.clear()
         self.loadLayers()
         self.caseID = -1
+        self.canvas.zoomScale(40000.0)
 
     def refreshCanvas(self, layer):
         # refresh canvas after changes
