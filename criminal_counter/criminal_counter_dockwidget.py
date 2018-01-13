@@ -107,6 +107,11 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         incident_layer = uf.getLegendLayerByName(self.iface, incident_layernm)
         self.setOriginalCombox(incident_layer)
         self.canvas.zoomScale(20000.0)
+<<<<<<< HEAD
+        self.tab_Analysis_2.setDisabled(True)
+        self.tab_Reporting_2.setDisabled(True)
+=======
+>>>>>>> fc0fcab5f3435d34ba53e7a5d20d9311c0cea721
 
     def setOriginalCombox(self, layer):
         # initialize comboboxes based on order of rank or time
@@ -172,6 +177,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         if self.caseID == -1:
             QMessageBox.information(None, "Warning:", "Please select a case you want to handle!")
             return
+        self.tab_Analysis_2.setDisabled(False)
+        self.tab_Case.setDisabled(True)
         self.tab_Main.setCurrentIndex(1)
         layer = uf.getLegendLayerByName(self.iface, "Incidents")
         self.canvas.zoomToSelected(layer)
@@ -182,8 +189,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # clear selection of incidents
         layer = uf.getLegendLayerByName(self.iface, "Incidents")
         layer.setSelectedFeatures([])
+        #self.loadLayers()
         self.list_case.clear()
-        self.loadLayers()
         self.caseID = -1
         self.canvas.zoomScale(20000.0)
 
@@ -359,7 +366,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         currentRow = self.table_PoliceJob.rowCount()
         self.table_PoliceJob.insertRow(currentRow)
         self.table_PoliceJob.setItem(currentRow,0,QtGui.QTableWidgetItem(policeman.attributes()[1]))
-        self.table_PoliceJob.setItem(currentRow,1,QtGui.QTableWidgetItem(str(point.id()+1)))
+        self.table_PoliceJob.setItem(currentRow,1,QtGui.QTableWidgetItem(str(point.id())))
         self.table_PoliceJob.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.ResizeToContents)
         self.table_PoliceJob.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.Stretch)
         self.table_PoliceJob.resizeRowsToContents()
@@ -403,6 +410,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             return
         QMessageBox.information(None, "Message:", "Your command has been sent successfully!")
         self.tab_Main.setCurrentIndex(2)
+        self.tab_Reporting_2.setDisabled(False)
+        self.tab_Analysis_2.setDisabled(True)
         self.writeReportList()
 
     def writeReportList(self):
@@ -442,6 +451,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         layer.setSelectedFeatures([])
         self.list_case.clear()
         self.loadLayers()
+        self.tab_Case.setDisabled(False)
+        self.tab_Reporting_2.setDisabled(True)
         self.caseID = -1
         self.canvas.zoomScale(20000.0)
 
