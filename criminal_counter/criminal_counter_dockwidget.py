@@ -424,6 +424,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     def clearReport(self):
         self.list_summary.clear()
+        self.tab_Main.setCurrentIndex(0)
 
     def refreshCanvas(self, layer):
         # refresh canvas after changes
