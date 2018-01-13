@@ -14,7 +14,7 @@
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" id="Policestations20171215121511159" source="/Users/daveyoldenburg/.qgis2/python/plugins/criminal_counter/data/Policestations.shp" name="Policestations">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Incidents20180113115646031" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/criminal_counter/data/Incidents.shp" name="Incidents">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Incidents20180113114655718" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/criminal_counter/data/Incidents.shp" name="Incidents">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Routes20180112122226415" source="/Users/daveyoldenburg/.qgis2/python/plugins/criminal_counter/data/Routes.shp" name="Routes">
@@ -37,10 +37,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>92394.18072608925285749</xmin>
-      <ymin>434831.08205686154542491</ymin>
-      <xmax>94023.38312150450656191</xmax>
-      <ymax>436574.7344443008187227</ymax>
+      <xmin>91737.70053701467986684</xmin>
+      <ymin>434887.83278127788798884</ymin>
+      <xmax>94210.67276175935694482</xmax>
+      <ymax>437170.30500582820968702</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -61,6 +61,7 @@
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Policestations20171215121511159"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OpenStreetMap20171215122504056"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Buffer20180112172124337"/>
+      <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Incidents20180113114655718"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nodes20180112112105150"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Routes20180112120634425"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nodes20180110132919159"/>
@@ -72,7 +73,6 @@
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Incidents20180108174112924"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Policemen20171215121508642"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nodes20180112112343801"/>
-      <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Incidents20180113115646031"/>
     </layer_coordinate_transform_info>
   </mapcanvas>
   <layer-tree-canvas>
@@ -85,7 +85,7 @@
       <item>Nodes20180112112343801</item>
       <item>Routes20180112122226415</item>
       <item>Buffer20180112172124337</item>
-      <item>Incidents20180113115646031</item>
+      <item>Incidents20180113114655718</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -106,7 +106,7 @@
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Incidents" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Incidents20180113115646031" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="Incidents20180113114655718" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Routes" showFeatureCount="0">
@@ -1237,7 +1237,7 @@ def my_form_open(dialog, layer, feature):
       <previewExpression></previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <id>Incidents20180113115646031</id>
+      <id>Incidents20180113114655718</id>
       <datasource>./Incidents.shp</datasource>
       <keywordList>
         <value></value>
@@ -1336,9 +1336,9 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/dist" value="0"/>
         <property key="labeling/distInMapUnits" value="false"/>
         <property key="labeling/distMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/drawLabels" value="true"/>
-        <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="Case No."/>
+        <property key="labeling/drawLabels" value="false"/>
+        <property key="labeling/enabled" value="false"/>
+        <property key="labeling/fieldName" value=""/>
         <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value=".SF NS Text"/>
@@ -1355,7 +1355,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/fontWeight" value="50"/>
         <property key="labeling/fontWordSpacing" value="0"/>
         <property key="labeling/formatNumbers" value="false"/>
-        <property key="labeling/isExpression" value="false"/>
+        <property key="labeling/isExpression" value="true"/>
         <property key="labeling/labelOffsetInMapUnits" value="true"/>
         <property key="labeling/labelOffsetMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/labelPerPart" value="false"/>
@@ -1374,14 +1374,14 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/obstacleType" value="0"/>
         <property key="labeling/offsetType" value="0"/>
         <property key="labeling/placeDirectionSymbol" value="0"/>
-        <property key="labeling/placement" value="1"/>
+        <property key="labeling/placement" value="6"/>
         <property key="labeling/placementFlags" value="10"/>
         <property key="labeling/plussign" value="false"/>
         <property key="labeling/predefinedPositionOrder" value="TR,TL,BR,BL,R,L,TSR,BSR"/>
         <property key="labeling/preserveRotation" value="true"/>
         <property key="labeling/previewBkgrdColor" value="#ffffff"/>
         <property key="labeling/priority" value="5"/>
-        <property key="labeling/quadOffset" value="7"/>
+        <property key="labeling/quadOffset" value="4"/>
         <property key="labeling/repeatDistance" value="0"/>
         <property key="labeling/repeatDistanceMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/repeatDistanceUnit" value="1"/>
@@ -1415,7 +1415,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/shapeBorderWidth" value="0"/>
         <property key="labeling/shapeBorderWidthMapUnitScale" value="0,0,0,0,0,0"/>
         <property key="labeling/shapeBorderWidthUnits" value="1"/>
-        <property key="labeling/shapeDraw" value="true"/>
+        <property key="labeling/shapeDraw" value="false"/>
         <property key="labeling/shapeFillColorA" value="255"/>
         <property key="labeling/shapeFillColorB" value="255"/>
         <property key="labeling/shapeFillColorG" value="255"/>
@@ -1438,7 +1438,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/shapeSizeX" value="0"/>
         <property key="labeling/shapeSizeY" value="0"/>
         <property key="labeling/shapeTransparency" value="0"/>
-        <property key="labeling/shapeType" value="2"/>
+        <property key="labeling/shapeType" value="0"/>
         <property key="labeling/substitutions" value="&lt;substitutions/>"/>
         <property key="labeling/textColorA" value="255"/>
         <property key="labeling/textColorB" value="0"/>
@@ -1449,7 +1449,7 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/useSubstitutions" value="false"/>
         <property key="labeling/wrapChar" value=""/>
         <property key="labeling/xOffset" value="0"/>
-        <property key="labeling/yOffset" value="30"/>
+        <property key="labeling/yOffset" value="0"/>
         <property key="labeling/zIndex" value="0"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -1574,10 +1574,10 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
-        <xmin>93930.90277502412209287</xmin>
-        <ymin>435932.86166107025928795</ymin>
-        <xmax>93930.90277502412209287</xmax>
-        <ymax>435932.86166107025928795</ymax>
+        <xmin>93208.40798766601074021</xmin>
+        <ymin>437248.92656513763358817</ymin>
+        <xmax>93731.40104375501687173</xmax>
+        <ymax>437806.31545459502376616</ymax>
       </extent>
       <id>Nodes20180112112343801</id>
       <datasource>../../../../../.qgis2/python/plugins/criminal_counter/data/Nodes.shp</datasource>
@@ -3081,7 +3081,7 @@ def my_form_open(dialog, layer, feature):
         <value>Policestations20171215121511159</value>
         <value>Roads_rotterdamcut20171213153553725</value>
         <value>Routes20180112122226415</value>
-        <value>Incidents20180113115646031</value>
+        <value>Incidents20180113114655718</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
