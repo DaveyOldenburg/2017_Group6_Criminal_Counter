@@ -317,12 +317,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         xy_police = police.geometry().asPoint()
         pt_police = QgsPoint(xy_police[0], xy_police[1])
 
-        # QgsSpatialIndex.nearestNeighbor (QgsPoint point, int neighbors)
-        #nearestId1 = spIndex.nearestNeighbor(pt_node, 1)
-
-        #ids = nearestId1
-        #roads.setSelectedFeatures(ids)
-
         self.buildNetwork(pt_node, pt_police)
 
         options = len(self.tied_points)
@@ -353,9 +347,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             prov.addFeatures([fet])
             #uf.insertTempFeatures(routes_layer, [path], [['testing', 100.00]])
         roads.removeSelection()
-
-
-
 
 
     def writeJobTable(self, point, policeman):
@@ -403,6 +394,9 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     def reportMessage(self):
         # send a message to the user that order has been sent
+        if self.caseID == -1 or self.policelist == []:
+            QMessageBox.information(None, "Warning:", "Please create routes first!")
+            return
         QMessageBox.information(None, "Message:", "Your order has been sent successfully!")
         self.tab_Main.setCurrentIndex(2)
         self.writeReportList()
@@ -439,6 +433,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     def clearReport(self):
         self.list_summary.clear()
+        self.tab_Main.setCurrentIndex(0)
 
     def refreshCanvas(self, layer):
         # refresh canvas after changes
