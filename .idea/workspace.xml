@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="763df0a1-a929-4fa9-b626-6d634fe286d8" name="Default" comment="" />
+    <list default="true" id="763df0a1-a929-4fa9-b626-6d634fe286d8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" afterPath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="86" column="25" lean-forward="false" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="25" />
+            <state relative-caret-position="363">
+              <caret line="430" column="52" lean-forward="false" selection-start-line="430" selection-start-column="52" selection-end-line="430" selection-end-column="52" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
               </folding>
@@ -50,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spatial_decision_dockwidget.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="spatial_decision_dockwidget.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2704">
+            <state relative-caret-position="5758">
               <caret line="408" column="26" lean-forward="false" selection-start-line="408" selection-start-column="17" selection-end-line="408" selection-end-column="26" />
               <folding>
                 <element signature="e#1180#1216#0" expanded="true" />
@@ -682,22 +685,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py">
+    <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2704">
-          <caret line="408" column="26" lean-forward="false" selection-start-line="408" selection-start-column="17" selection-end-line="408" selection-end-column="26" />
+        <state relative-caret-position="363">
+          <caret line="430" column="52" lean-forward="false" selection-start-line="430" selection-start-column="52" selection-end-line="430" selection-end-column="52" />
           <folding>
-            <element signature="e#1180#1216#0" expanded="true" />
+            <element signature="e#1182#1191#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
+    <entry file="file://$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="86" column="25" lean-forward="false" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="25" />
+        <state relative-caret-position="5758">
+          <caret line="408" column="26" lean-forward="false" selection-start-line="408" selection-start-column="17" selection-end-line="408" selection-end-column="26" />
           <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
+            <element signature="e#1180#1216#0" expanded="true" />
           </folding>
         </state>
       </provider>

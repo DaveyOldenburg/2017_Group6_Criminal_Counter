@@ -430,17 +430,10 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         if path != '':
             self.canvas.saveAsImage(path,None,"PNG")
 
-
-
-
-
     def clearReport(self):
         self.list_summary.clear()
         self.tab_Main.setCurrentIndex(0)
         self.deleteRoutes()
-
-
-
 
     def refreshCanvas(self, layer):
         # refresh canvas after changes
