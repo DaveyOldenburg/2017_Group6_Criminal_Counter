@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="763df0a1-a929-4fa9-b626-6d634fe286d8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" afterPath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +32,8 @@
       <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="437" column="25" lean-forward="true" selection-start-line="437" selection-start-column="25" selection-end-line="437" selection-end-column="25" />
+            <state relative-caret-position="-230">
+              <caret line="359" column="89" lean-forward="false" selection-start-line="359" selection-start-column="89" selection-end-line="359" selection-end-column="89" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
               </folding>
@@ -696,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="437" column="25" lean-forward="true" selection-start-line="437" selection-start-column="25" selection-end-line="437" selection-end-column="25" />
+        <state relative-caret-position="-230">
+          <caret line="359" column="89" lean-forward="false" selection-start-line="359" selection-start-column="89" selection-end-line="359" selection-end-column="89" />
           <folding>
             <element signature="e#1182#1191#0" expanded="true" />
           </folding>
