@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="763df0a1-a929-4fa9-b626-6d634fe286d8" name="Default" comment="" />
+    <list default="true" id="763df0a1-a929-4fa9-b626-6d634fe286d8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/criminal_counter/metadata.txt" afterPath="$PROJECT_DIR$/criminal_counter/metadata.txt" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +31,8 @@
       <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="198" column="42" lean-forward="true" selection-start-line="198" selection-start-column="42" selection-end-line="198" selection-end-column="42" />
+            <state relative-caret-position="2934">
+              <caret line="205" column="42" lean-forward="true" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
               </folding>
@@ -41,7 +43,7 @@
       <file leaf-file-name="utility_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpatialDecision/utility_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12270">
+            <state relative-caret-position="15">
               <caret line="826" column="13" lean-forward="false" selection-start-line="826" selection-start-column="6" selection-end-line="826" selection-end-column="13" />
               <folding>
                 <element signature="e#1170#1201#0" expanded="true" />
@@ -53,11 +55,31 @@
       <file leaf-file-name="spatial_decision_dockwidget.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3479">
+            <state relative-caret-position="-132">
               <caret line="408" column="26" lean-forward="false" selection-start-line="408" selection-start-column="17" selection-end-line="408" selection-end-column="26" />
               <folding>
                 <element signature="e#1180#1216#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="metadata.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/criminal_counter/metadata.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="criminal_counter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,7 +98,6 @@
       <find>fromRgb</find>
       <find>setColor</find>
       <find>copylayer</find>
-      <find>icon</find>
       <find>removeMapLayer</find>
       <find>delete</find>
       <find>deleteroutes</find>
@@ -96,6 +117,7 @@
       <find>intersect</find>
       <find>button_clear</find>
       <find>40000</find>
+      <find>icon</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -109,6 +131,7 @@
         <option value="$PROJECT_DIR$/SpatialDecision/utility_functions.py" />
         <option value="$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py" />
         <option value="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" />
+        <option value="$PROJECT_DIR$/criminal_counter/metadata.txt" />
       </list>
     </option>
   </component>
@@ -251,7 +274,7 @@
     <frame x="20" y="23" width="1400" height="822" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25478646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25478646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -306,14 +329,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/-1856293957/PyQt4/QtGui/QDockWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpatialDecision/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -354,6 +369,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -417,13 +433,6 @@
           <folding>
             <element signature="e#1170#1201#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/criminal_counter/metadata.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -674,7 +683,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpatialDecision/utility_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12270">
+        <state relative-caret-position="15">
           <caret line="826" column="13" lean-forward="false" selection-start-line="826" selection-start-column="6" selection-end-line="826" selection-end-column="13" />
           <folding>
             <element signature="e#1170#1201#0" expanded="true" />
@@ -684,7 +693,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3479">
+        <state relative-caret-position="-132">
           <caret line="408" column="26" lean-forward="false" selection-start-line="408" selection-start-column="17" selection-end-line="408" selection-end-column="26" />
           <folding>
             <element signature="e#1180#1216#0" expanded="true" />
@@ -692,10 +701,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/criminal_counter/metadata.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="198" column="42" lean-forward="true" selection-start-line="198" selection-start-column="42" selection-end-line="198" selection-end-column="42" />
+        <state relative-caret-position="2934">
+          <caret line="205" column="42" lean-forward="true" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
           <folding>
             <element signature="e#1182#1191#0" expanded="true" />
           </folding>
