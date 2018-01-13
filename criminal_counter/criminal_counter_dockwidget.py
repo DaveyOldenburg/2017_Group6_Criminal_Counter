@@ -84,7 +84,9 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         
         # tab report
         self.button_save.clicked.connect(self.saveReport)
+        self.button_save_2.clicked.connect(self.saveMap)
         self.button_clear.clicked.connect(self.clearReport)
+
         
         # initialisation
         self.loadLayers()
@@ -422,10 +424,11 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 f_output.write("\n")
             f_output.close()
 
+
     def saveMap(self):
-        filename = self.saveMapPathEdit.text()
-        if filename != '':
-            self.canvas.saveAsImage(filename,None,"PNG")
+        path = QtGui.QFileDialog.getSaveFileName(self, 'Save File', '', 'PNG(*.png)')
+        if path != '':
+            self.canvas.saveAsImage(path,None,"PNG")
 
 
 
@@ -434,6 +437,10 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
     def clearReport(self):
         self.list_summary.clear()
         self.tab_Main.setCurrentIndex(0)
+        self.deleteRoutes()
+
+
+
 
     def refreshCanvas(self, layer):
         # refresh canvas after changes
