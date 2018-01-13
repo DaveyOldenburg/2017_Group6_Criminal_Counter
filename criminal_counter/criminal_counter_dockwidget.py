@@ -87,6 +87,8 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.button_save_2.clicked.connect(self.saveMap)
         self.button_clear.clicked.connect(self.clearReport)
 
+        # add button icons
+        self.label.setPixmap(QtGui.QPixmap(':Logo_Criminal_Counter.png'))
         
         # initialisation
         self.loadLayers()
