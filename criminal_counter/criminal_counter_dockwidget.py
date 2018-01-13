@@ -107,8 +107,11 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         incident_layer = uf.getLegendLayerByName(self.iface, incident_layernm)
         self.setOriginalCombox(incident_layer)
         self.canvas.zoomScale(20000.0)
+<<<<<<< HEAD
         self.tab_Analysis_2.setDisabled(True)
         self.tab_Reporting_2.setDisabled(True)
+=======
+>>>>>>> fc0fcab5f3435d34ba53e7a5d20d9311c0cea721
 
     def setOriginalCombox(self, layer):
         # initialize comboboxes based on order of rank or time

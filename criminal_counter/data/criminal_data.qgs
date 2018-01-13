@@ -14,7 +14,7 @@
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Routes20180112122226415" source="/Users/daveyoldenburg/.qgis2/python/plugins/criminal_counter/data/Routes.shp" name="Routes">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Policemen20180113153324162" source="/Users/daveyoldenburg/Documents/GitHub/2017_Group6_Criminal_Counter/criminal_counter/data/Policemen.shp" name="Policemen">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Policemen20171215121508642" source="/Users/daveyoldenburg/.qgis2/python/plugins/criminal_counter/data/Policemen.shp" name="Policemen">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="wms" checked="Qt::Checked" id="brtachtergrondkaartgrijs20180109193400789" source="tileMatrixSet=EPSG:28992&amp;crs=EPSG:28992&amp;layers=brtachtergrondkaartgrijs&amp;styles=default&amp;format=image/png&amp;url=https://geodata.nationaalgeoregister.nl/wmts?VERSION%3D1.0.0%26request%3DGetCapabilities" name="brtachtergrondkaartgrijs">
@@ -28,10 +28,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>91349.47946101815614384</xmin>
-      <ymin>433974.90712178096873686</ymin>
-      <xmax>94066.07830303932132665</xmax>
-      <ymax>438242.20109019830124453</ymax>
+      <xmin>92888.53691721109498758</xmin>
+      <ymin>435302.99941171560203657</ymin>
+      <xmax>94176.52858519151050132</xmax>
+      <ymax>436170.83274593407986686</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -62,7 +62,6 @@
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Buildings_Rotterdamcut420171215121839805"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Incidents20180108174112924"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Policemen20171215121508642"/>
-      <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Policemen20180113153324162"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:28992" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nodes20180112112343801"/>
       <layer_coordinate_transform destAuthId="EPSG:28992" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Incidents20180113115646031"/>
     </layer_coordinate_transform_info>
@@ -70,11 +69,11 @@
   <layer-tree-canvas>
     <custom-order enabled="0">
       <item>Roads_rotterdamcut20171213153553725</item>
+      <item>Policemen20171215121508642</item>
       <item>brtachtergrondkaartgrijs20180109193400789</item>
       <item>Nodes20180112112343801</item>
       <item>Routes20180112122226415</item>
       <item>Incidents20180113115646031</item>
-      <item>Policemen20180113153324162</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -95,7 +94,7 @@
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Policemen" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Policemen20180113153324162" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="Policemen20171215121508642" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="brtachtergrondkaartgrijs" showFeatureCount="0">
@@ -760,8 +759,14 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <id>Policemen20180113153324162</id>
-      <datasource>./Policemen.shp</datasource>
+      <extent>
+        <xmin>91414.16038582818873692</xmin>
+        <ymin>434076.50935912429122254</ymin>
+        <xmax>94001.39737822930328548</xmax>
+        <ymax>438140.5988528550369665</ymax>
+      </extent>
+      <id>Policemen20171215121508642</id>
+      <datasource>../../../../../.qgis2/python/plugins/criminal_counter/data/Policemen.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -778,7 +783,7 @@ def my_form_open(dialog, layer, feature):
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
-      <provider encoding="UTF-8">ogr</provider>
+      <provider encoding="System">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
       <expressionfields/>
@@ -876,6 +881,7 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <labeling type="simple"/>
       <customproperties>
+        <property key="embeddedWidgets/count" value="0"/>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
         <property key="labeling/angleOffset" value="0"/>
@@ -1834,9 +1840,9 @@ def my_form_open(dialog, layer, feature):
       <LayerSnappingList type="QStringList">
         <value>Incidents20180113115646031</value>
         <value>Nodes20180112112343801</value>
+        <value>Policemen20171215121508642</value>
         <value>Roads_rotterdamcut20171213153553725</value>
         <value>Routes20180112122226415</value>
-        <value>Policemen20180113153324162</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
@@ -1851,7 +1857,7 @@ def my_form_open(dialog, layer, feature):
         <value>1</value>
         <value>1</value>
         <value>2</value>
-        <value>1</value>
+        <value>2</value>
         <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
