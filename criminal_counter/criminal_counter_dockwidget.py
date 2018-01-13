@@ -106,7 +106,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         incident_layernm = "Incidents"
         incident_layer = uf.getLegendLayerByName(self.iface, incident_layernm)
         self.setOriginalCombox(incident_layer)
-        self.canvas.zoomScale(40000.0)
+        self.canvas.zoomScale(20000.0)
 
     def setOriginalCombox(self, layer):
         # initialize comboboxes based on order of rank or time
@@ -185,7 +185,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.list_case.clear()
         self.loadLayers()
         self.caseID = -1
-        self.canvas.zoomScale(40000.0)
+        self.canvas.zoomScale(20000.0)
 
 ###
 # Node Input
@@ -443,7 +443,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.list_case.clear()
         self.loadLayers()
         self.caseID = -1
-        self.canvas.zoomScale(40000.0)
+        self.canvas.zoomScale(20000.0)
 
     def refreshCanvas(self, layer):
         # refresh canvas after changes
