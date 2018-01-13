@@ -182,8 +182,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         layer = uf.getLegendLayerByName(self.iface, "Incidents")
         layer.setSelectedFeatures([])
         self.list_case.clear()
-        self.comboBox_Rank.clear()
-        self.comboBox_Time.clear()
         self.loadLayers()
         self.caseID = -1
 
@@ -434,6 +432,16 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.list_summary.clear()
         self.tab_Main.setCurrentIndex(0)
         self.deleteRoutes()
+<<<<<<< HEAD
+=======
+        layer = uf.getLegendLayerByName(self.iface, "Incidents")
+        layer.setSelectedFeatures([])
+        self.list_case.clear()
+        self.loadLayers()
+        self.caseID = -1
+
+
+>>>>>>> ca9b53f14d80f3f91ef3da8e9d2ff03160dfdbbc
 
     def refreshCanvas(self, layer):
         # refresh canvas after changes

@@ -15,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
-              <caret line="437" column="33" lean-forward="true" selection-start-line="437" selection-start-column="33" selection-end-line="437" selection-end-column="33" />
+              <caret line="438" column="30" lean-forward="false" selection-start-line="438" selection-start-column="30" selection-end-line="438" selection-end-column="30" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
               </folding>
@@ -604,7 +604,7 @@
     <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
-          <caret line="437" column="33" lean-forward="true" selection-start-line="437" selection-start-column="33" selection-end-line="437" selection-end-column="33" />
+          <caret line="438" column="30" lean-forward="false" selection-start-line="438" selection-start-column="30" selection-end-line="438" selection-end-column="30" />
           <folding>
             <element signature="e#1182#1191#0" expanded="true" />
           </folding>
