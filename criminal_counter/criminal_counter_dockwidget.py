@@ -428,6 +428,15 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 f_output.write("\n")
             f_output.close()
 
+    def saveMap(self):
+        filename = self.saveMapPathEdit.text()
+        if filename != '':
+            self.canvas.saveAsImage(filename,None,"PNG")
+
+
+
+
+
     def clearReport(self):
         self.list_summary.clear()
 

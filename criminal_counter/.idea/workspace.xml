@@ -14,8 +14,8 @@
       <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1197">
-              <caret line="90" column="27" lean-forward="false" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
+            <state relative-caret-position="384">
+              <caret line="433" column="56" lean-forward="false" selection-start-line="433" selection-start-column="56" selection-end-line="433" selection-end-column="56" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
               </folding>
@@ -94,7 +94,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SpatialDecision" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -603,8 +603,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="90" column="27" lean-forward="false" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
+        <state relative-caret-position="384">
+          <caret line="433" column="56" lean-forward="false" selection-start-line="433" selection-start-column="56" selection-end-line="433" selection-end-column="56" />
           <folding>
             <element signature="e#1182#1191#0" expanded="true" />
           </folding>
