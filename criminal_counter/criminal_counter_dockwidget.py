@@ -229,9 +229,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         # remove selected node from the table
         nodes = uf.getLegendLayerByName(self.iface, "Nodes")
         items = self.table_Node.selectedItems()
-        for item in items:
-            nodeID = int(item.text())
-            nod        if items:
+        if items:
             for item in items:
                 nodeID = int(item.text())
                 nodes.startEditing()
