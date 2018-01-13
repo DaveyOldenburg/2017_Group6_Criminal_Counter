@@ -213,11 +213,11 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
             self.updateNodeTable(nodes)
 
     def updateNodeTable(self, layer):
-        # update the node table and visulize the node in the table
+        # update the node table and visualize the node in the table
         self.table_Node.clear()
         lst_nodeID = []
         for feature in layer.getFeatures():
-            lst_nodeID.append(feature.id())
+            lst_nodeID.append(feature.id()+1)
         self.table_Node.setColumnCount(1)
         self.table_Node.setHorizontalHeaderLabels(["Blockade No"])
         self.table_Node.setRowCount(len(lst_nodeID))
@@ -231,7 +231,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         items = self.table_Node.selectedItems()
         if items:
             for item in items:
-                nodeID = int(item.text())
+                nodeID = int(item.text())-1
                 nodes.startEditing()
                 nodes.deleteFeature(nodeID)
             nodes.commitChanges()
