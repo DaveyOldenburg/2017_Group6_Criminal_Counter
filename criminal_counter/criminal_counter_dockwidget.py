@@ -88,6 +88,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         
         # initialisation
         self.loadLayers()
+        self.deleteRoutes()
 
     def closeEvent(self, event):
         self.closingPlugin.emit()
