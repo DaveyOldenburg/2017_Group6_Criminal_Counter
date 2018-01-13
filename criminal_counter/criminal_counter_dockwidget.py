@@ -165,6 +165,9 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
 
     def runcase(self):
         # put the focus on the selected incident and jump to analysis part
+        if self.caseID == -1:
+            QMessageBox.information(None, "Warning:", "Please select a case you want to handle!")
+            return
         self.tab_Main.setCurrentIndex(1)
         layer = uf.getLegendLayerByName(self.iface, "Incidents")
         self.canvas.zoomToSelected(layer)
@@ -227,11 +230,17 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         items = self.table_Node.selectedItems()
         for item in items:
             nodeID = int(item.text())
-            nodes.startEditing()
-            nodes.deleteFeature(nodeID)
-        nodes.commitChanges()
-        self.updateNodeTable(nodes)
-        self.refreshCanvas(nodes)
+            nod        if items:
+            for item in items:
+                nodeID = int(item.text())
+                nodes.startEditing()
+                nodes.deleteFeature(nodeID)
+            nodes.commitChanges()
+            self.updateNodeTable(nodes)
+            self.refreshCanvas(nodes)
+        else:
+            QMessageBox.information(None, "Warning:", "Please select the blockades you want to remove in the table!")
+            return
 
 ###
 # Route Creation
@@ -252,15 +261,18 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
     def calculation(self):
         # calculate the nearest policeman and shortest path for each node selected by the user
         nodes_layer = uf.getLegendLayerByName(self.iface, "Nodes")
+        nodes = nodes_layer.getFeatures()
         routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
         self.table_PoliceJob.clear()
         self.table_PoliceJob.setColumnCount(2)
         self.table_PoliceJob.setHorizontalHeaderLabels(["Policeman","will go to the node"])
-        if nodes_layer:
-            for node in nodes_layer.getFeatures():
-                policeman = self.getNearestPoliceman(node)
-                self.getShortestPath(node, policeman)
-                self.writeJobTable(node, policeman)
+        if not nodes:
+            QMessageBox.information(None, "Warning:", "Please create the blockades first!")
+            return
+        for node in nodes:
+            policeman = self.getNearestPoliceman(node)
+            self.getShortestPath(node, policeman)
+            self.writeJobTable(node, policeman)
         self.refreshCanvas(routes_layer)
 
     def getNearestPoliceman(self, point):
