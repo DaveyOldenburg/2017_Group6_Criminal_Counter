@@ -182,8 +182,6 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         layer = uf.getLegendLayerByName(self.iface, "Incidents")
         layer.setSelectedFeatures([])
         self.list_case.clear()
-        self.comboBox_Rank.clear()
-        self.comboBox_Time.clear()
         self.loadLayers()
         self.caseID = -1
 
@@ -438,7 +436,11 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.list_summary.clear()
         self.tab_Main.setCurrentIndex(0)
         self.deleteRoutes()
-
+        layer = uf.getLegendLayerByName(self.iface, "Incidents")
+        layer.setSelectedFeatures([])
+        self.list_case.clear()
+        self.loadLayers()
+        self.caseID = -1
 
 
 
