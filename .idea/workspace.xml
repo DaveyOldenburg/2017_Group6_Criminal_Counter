@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="763df0a1-a929-4fa9-b626-6d634fe286d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" afterPath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget_base.ui.autosave" afterPath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget_base.ui.autosave" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="187" column="31" lean-forward="false" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="31" />
+            <state relative-caret-position="235">
+              <caret line="198" column="42" lean-forward="true" selection-start-line="198" selection-start-column="42" selection-end-line="198" selection-end-column="42" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
               </folding>
@@ -696,8 +696,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="187" column="31" lean-forward="false" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="31" />
+        <state relative-caret-position="235">
+          <caret line="198" column="42" lean-forward="true" selection-start-line="198" selection-start-column="42" selection-end-line="198" selection-end-column="42" />
           <folding>
             <element signature="e#1182#1191#0" expanded="true" />
           </folding>
