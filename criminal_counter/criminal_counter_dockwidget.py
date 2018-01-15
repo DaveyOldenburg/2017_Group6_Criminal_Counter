@@ -71,6 +71,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.caseID = -1
         
         # tab analysis
+        self.counter=0
         self.graph = QgsGraph()
         self.tied_points = []
         self.policelist = []
@@ -271,17 +272,26 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         nodes_layer = uf.getLegendLayerByName(self.iface, "Nodes")
         nodes = nodes_layer.getFeatures()
         routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
+
+
         self.table_PoliceJob.clear()
         self.table_PoliceJob.setColumnCount(2)
         self.table_PoliceJob.setHorizontalHeaderLabels(["Policeman","will go to the node"])
         if self.table_Node.rowCount() == 0:
             QMessageBox.information(None, "Warning:", "Please create the blockades first!")
             return
+
+        if self.counter==1:
+            QMessageBox.information(None, "Warning:", "Routes have already been created!")
+            return
+
+
         for node in nodes:
             policeman = self.getNearestPoliceman(node)
             self.getShortestPath(node, policeman)
             self.writeJobTable(node, policeman)
         self.refreshCanvas(routes_layer)
+        self.counter=1
 
     def getNearestPoliceman(self, point):
         # find a nearest policeman for a given point(node)
@@ -398,6 +408,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.table_PoliceJob.setHorizontalHeaderLabels(["Policeman","will go to the node"])
         self.canvas.refresh()
         self.policelist = []
+        self.counter=0
 
 ###
 # Report output
