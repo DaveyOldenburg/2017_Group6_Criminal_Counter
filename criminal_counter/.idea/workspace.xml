@@ -11,10 +11,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="4337">
               <caret line="284" column="8" lean-forward="false" selection-start-line="284" selection-start-column="8" selection-end-line="284" selection-end-column="8" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
@@ -43,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pb_tool.cfg" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pb_tool.cfg" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pb_tool.cfg">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -68,6 +68,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>setmap</find>
+      <find>qmessagebox</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -616,19 +617,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pb_tool.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/criminal_counter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="166" column="4" lean-forward="true" selection-start-line="166" selection-start-column="4" selection-end-line="174" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4337">
+          <caret line="284" column="8" lean-forward="false" selection-start-line="284" selection-start-column="8" selection-end-line="284" selection-end-column="8" />
+          <folding>
+            <element signature="e#1182#1191#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -640,13 +643,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
+    <entry file="file://$PROJECT_DIR$/pb_tool.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="284" column="8" lean-forward="false" selection-start-line="284" selection-start-column="8" selection-end-line="284" selection-end-column="8" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
