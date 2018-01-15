@@ -23,7 +23,7 @@
 from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt
 from PyQt4.QtGui import QAction, QIcon
 # Initialize Qt resources from file resources.py
-
+import resources
 
 # Import the code for the DockWidget
 from criminal_counter_dockwidget import criminal_counterDockWidget

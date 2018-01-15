@@ -33,6 +33,7 @@ from qgis.networkanalysis import *
 from time import gmtime, strftime
 from qgis.gui import *
 import processing
+import resources
 from . import utility_functions as uf
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
