@@ -31,6 +31,7 @@ tags=
 homepage=
 category=Plugins
 icon=icon.png
+
 # experimental flag
 experimental=False
 
