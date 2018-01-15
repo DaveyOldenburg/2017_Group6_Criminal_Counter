@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="763df0a1-a929-4fa9-b626-6d634fe286d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/criminal_counter/metadata.txt" afterPath="$PROJECT_DIR$/criminal_counter/metadata.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget_base.ui.autosave" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/criminal_counter/criminal_counter.py" afterPath="$PROJECT_DIR$/criminal_counter/criminal_counter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" afterPath="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,14 +31,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2934">
-              <caret line="205" column="42" lean-forward="true" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
-              <folding>
-                <element signature="e#1182#1191#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="292">
+              <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resources.qrc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/criminal_counter/resources.qrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,7 +54,7 @@
       <file leaf-file-name="utility_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpatialDecision/utility_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="12270">
               <caret line="826" column="13" lean-forward="false" selection-start-line="826" selection-start-column="6" selection-end-line="826" selection-end-column="13" />
               <folding>
                 <element signature="e#1170#1201#0" expanded="true" />
@@ -55,7 +66,7 @@
       <file leaf-file-name="spatial_decision_dockwidget.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
+            <state relative-caret-position="15">
               <caret line="408" column="26" lean-forward="false" selection-start-line="408" selection-start-column="17" selection-end-line="408" selection-end-column="26" />
               <folding>
                 <element signature="e#1180#1216#0" expanded="true" />
@@ -74,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="criminal_counter.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="criminal_counter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="267">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,7 +99,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getSelectedLayer</find>
       <find>selectedFeatures</find>
       <find>network_layer</find>
       <find>select</find>
@@ -118,6 +128,7 @@
       <find>button_clear</find>
       <find>40000</find>
       <find>icon</find>
+      <find>resources</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,8 +141,9 @@
         <option value="$PROJECT_DIR$/criminal_counter/utility_functions.py" />
         <option value="$PROJECT_DIR$/SpatialDecision/utility_functions.py" />
         <option value="$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py" />
-        <option value="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" />
         <option value="$PROJECT_DIR$/criminal_counter/metadata.txt" />
+        <option value="$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py" />
+        <option value="$PROJECT_DIR$/criminal_counter/criminal_counter.py" />
       </list>
     </option>
   </component>
@@ -190,8 +202,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,7 +286,7 @@
     <frame x="20" y="23" width="1400" height="822" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25478646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25846833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -329,13 +341,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SpatialDecision/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpatialDecision/resources.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -358,21 +363,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/criminal_counter/resources.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/criminal_counter/resources.qrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/criminal_counter/resources.py" />
     <entry file="file://$PROJECT_DIR$/SpatialDecision/icons/loading.gif">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -455,9 +446,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4168">
           <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -465,9 +454,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -485,9 +472,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -515,9 +500,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -535,9 +518,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="56" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -555,9 +536,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -575,9 +554,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -595,9 +572,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -637,22 +612,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/-1856293957/PyQt4/QtGui/QWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/-1856293957/PyQt4/QtGui/QDockWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/-1856293957/PyQt4/QtGui/QWidget.py" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/-1856293957/PyQt4/QtGui/QDockWidget.py" />
     <entry file="file://$PROJECT_DIR$/criminal_counter/utility_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -683,20 +644,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SpatialDecision/utility_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="12270">
           <caret line="826" column="13" lean-forward="false" selection-start-line="826" selection-start-column="6" selection-end-line="826" selection-end-column="13" />
           <folding>
             <element signature="e#1170#1201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="408" column="26" lean-forward="false" selection-start-line="408" selection-start-column="17" selection-end-line="408" selection-end-column="26" />
-          <folding>
-            <element signature="e#1180#1216#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -709,21 +660,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter.py">
+    <entry file="file://$PROJECT_DIR$/criminal_counter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/criminal_counter/resources.qrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpatialDecision/spatial_decision_dockwidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="408" column="26" lean-forward="false" selection-start-line="408" selection-start-column="17" selection-end-line="408" selection-end-column="26" />
+          <folding>
+            <element signature="e#1180#1216#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2934">
-          <caret line="205" column="42" lean-forward="true" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
-          <folding>
-            <element signature="e#1182#1191#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="292">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/criminal_counter/criminal_counter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
