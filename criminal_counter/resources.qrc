@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/" >
         <file>icon.png</file>
+        <file>Logo_Criminal_Counter.png</file>
     </qresource>
 </RCC>
