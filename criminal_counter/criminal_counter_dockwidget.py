@@ -274,9 +274,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         routes_layer = uf.getLegendLayerByName(self.iface, "Routes")
 
 
-        self.table_PoliceJob.clear()
-        self.table_PoliceJob.setColumnCount(2)
-        self.table_PoliceJob.setHorizontalHeaderLabels(["Policeman","will go to the node"])
+
         if self.table_Node.rowCount() == 0:
             QMessageBox.information(None, "Warning:", "Please create the blockades first!")
             return
@@ -284,7 +282,10 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         if self.counter==1:
             QMessageBox.information(None, "Warning:", "Routes have already been created!")
             return
-
+        
+        self.table_PoliceJob.clear()
+        self.table_PoliceJob.setColumnCount(2)
+        self.table_PoliceJob.setHorizontalHeaderLabels(["Policeman", "will go to the node"])
 
         for node in nodes:
             policeman = self.getNearestPoliceman(node)

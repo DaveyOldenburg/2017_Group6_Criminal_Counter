@@ -14,8 +14,8 @@
       <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1230">
-              <caret line="291" column="47" lean-forward="true" selection-start-line="288" selection-start-column="8" selection-end-line="291" selection-end-column="47" />
+            <state relative-caret-position="324">
+              <caret line="284" column="8" lean-forward="false" selection-start-line="284" selection-start-column="8" selection-end-line="284" selection-end-column="8" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
               </folding>
@@ -642,8 +642,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1230">
-          <caret line="291" column="47" lean-forward="true" selection-start-line="288" selection-start-column="8" selection-end-line="291" selection-end-column="47" />
+        <state relative-caret-position="324">
+          <caret line="284" column="8" lean-forward="false" selection-start-line="284" selection-start-column="8" selection-end-line="284" selection-end-column="8" />
           <folding>
             <element signature="e#1182#1191#0" expanded="true" />
           </folding>
