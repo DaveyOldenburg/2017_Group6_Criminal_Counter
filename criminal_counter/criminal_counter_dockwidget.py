@@ -366,7 +366,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         currentRow = self.table_PoliceJob.rowCount()
         self.table_PoliceJob.insertRow(currentRow)
         self.table_PoliceJob.setItem(currentRow,0,QtGui.QTableWidgetItem(policeman.attributes()[1]))
-        self.table_PoliceJob.setItem(currentRow,1,QtGui.QTableWidgetItem(str(point.id())))
+        self.table_PoliceJob.setItem(currentRow,1,QtGui.QTableWidgetItem(str(point.id()+1)))
         self.table_PoliceJob.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.ResizeToContents)
         self.table_PoliceJob.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.Stretch)
         self.table_PoliceJob.resizeRowsToContents()

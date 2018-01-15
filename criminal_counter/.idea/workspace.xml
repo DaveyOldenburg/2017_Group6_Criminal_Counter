@@ -14,8 +14,8 @@
       <file leaf-file-name="criminal_counter_dockwidget.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="81" column="59" lean-forward="true" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
+            <state relative-caret-position="252">
+              <caret line="368" column="89" lean-forward="false" selection-start-line="368" selection-start-column="89" selection-end-line="368" selection-end-column="89" />
               <folding>
                 <element signature="e#1182#1191#0" expanded="true" />
               </folding>
@@ -74,9 +74,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/criminal_counter.py" />
-        <option value="$PROJECT_DIR$/criminal_counter_dockwidget.py" />
         <option value="$PROJECT_DIR$/pb_tool.cfg" />
         <option value="$PROJECT_DIR$/resources.qrc" />
+        <option value="$PROJECT_DIR$/criminal_counter_dockwidget.py" />
       </list>
     </option>
   </component>
@@ -629,8 +629,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/criminal_counter_dockwidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="81" column="59" lean-forward="true" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
+        <state relative-caret-position="252">
+          <caret line="368" column="89" lean-forward="false" selection-start-line="368" selection-start-column="89" selection-end-line="368" selection-end-column="89" />
           <folding>
             <element signature="e#1182#1191#0" expanded="true" />
           </folding>
