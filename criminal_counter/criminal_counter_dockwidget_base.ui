@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>482</width>
-    <height>635</height>
+    <height>613</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,10 +15,16 @@
   </property>
   <widget class="QWidget" name="dockWidgetContents">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
+    <item row="0" column="0">
      <widget class="QLabel" name="label">
+      <property name="contextMenuPolicy">
+       <enum>Qt::ActionsContextMenu</enum>
+      </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;CRIMINAL COUNTER&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
       <property name="margin">
        <number>15</number>
@@ -28,7 +34,7 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="1" column="0">
      <widget class="QTabWidget" name="tab_Main">
       <property name="currentIndex">
        <number>0</number>
@@ -270,9 +276,6 @@
        </layout>
       </widget>
      </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QGraphicsView" name="graphicsView"/>
     </item>
    </layout>
   </widget>
