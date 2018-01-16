@@ -66,6 +66,10 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.tab_Main.setCurrentIndex(0)
         self.comboBox_Rank.activated.connect(self.setCasebyRank)
         self.comboBox_Time.activated.connect(self.setCasebyTime)
+        self.Button_SelectCase.clicked.connect(self.selectCase)
+        self.selectPoint = QgsMapToolEmitPoint(self.canvas)
+        self.selectPoint.canvasClicked.connect(self.getCase)
+
         self.button_run.clicked.connect(self.runcase)
         self.button_cancel.clicked.connect(self.cancel)
         self.caseID = -1
@@ -79,6 +83,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.button_subtract.clicked.connect(self.removeNodefromTable)
         self.button_calculate.clicked.connect(self.calculation)
         self.button_undo.clicked.connect(self.deleteRoutes)
+
         self.emitPoint = QgsMapToolEmitPoint(self.canvas)
         self.emitPoint.canvasClicked.connect(self.getPoint)
         self.button_StartCounter.clicked.connect(self.reportMessage)
@@ -172,6 +177,33 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
                 self.list_case.addItems(case_info)
                 layer.setSelectedFeatures([feat.id()])
                 break
+
+    def selectCase(self):
+        self.userTool = self.canvas.mapTool()
+        self.canvas.setMapTool(self.selectPoint)
+
+    def getCase(self, point, mouseButton):
+        self.canvas.unsetMapTool(self.selectPoint)
+        self.canvas.setMapTool(self.userTool)
+        if point:
+            width = self.iface.mapCanvas().mapUnitsPerPixel() * 100
+            rect = QgsRectangle(point.x() - width,
+                                point.y() - width,
+                                point.x() + width,
+                                point.y() + width)
+            layer = uf.getLegendLayerByName(self.iface, "Incidents")
+            rect = self.iface.mapCanvas().mapRenderer().mapToLayerCoordinates(layer, rect)
+            for feat in layer.getFeatures():
+                xy = feat.geometry().asPoint()
+                # self.list_case.addItems([str(point.x() - width)])
+                # self.list_case.addItems([str(xy[0]),str(xy[1])])
+                pt = QgsPoint(xy[0], xy[1])
+                if rect.contains(pt):
+                    layer.setSelectedFeatures([feat.id()])
+                    self.writeCaseList(feat.attributes()[6])
+                    self.canvas.unsetMapTool(self.userTool)
+
+                    break
 
     def runcase(self):
         # put the focus on the selected incident and jump to analysis part

@@ -80,6 +80,19 @@
              </item>
             </layout>
            </item>
+           <item>
+            <widget class="QPushButton" name="Button_SelectCase">
+             <property name="maximumSize">
+              <size>
+               <width>6777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Select on Map</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
