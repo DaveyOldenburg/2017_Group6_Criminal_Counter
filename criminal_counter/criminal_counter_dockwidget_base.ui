@@ -40,7 +40,7 @@
     <item row="1" column="0">
      <widget class="QTabWidget" name="tab_Main">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_Case">
        <attribute name="title">
@@ -227,6 +227,13 @@
          <widget class="QPushButton" name="button_undo">
           <property name="text">
            <string>Undo Blockades and Routes</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="button_ClearCase">
+          <property name="text">
+           <string>Cancel Case</string>
           </property>
          </widget>
         </item>

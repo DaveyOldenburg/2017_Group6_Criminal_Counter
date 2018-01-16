@@ -87,6 +87,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.emitPoint = QgsMapToolEmitPoint(self.canvas)
         self.emitPoint.canvasClicked.connect(self.getPoint)
         self.button_StartCounter.clicked.connect(self.reportMessage)
+        self.button_ClearCase.clicked.connect(self.clearReport)
         
         # tab report
         self.button_save.clicked.connect(self.saveReport)
@@ -186,7 +187,7 @@ class criminal_counterDockWidget(QtGui.QDockWidget, FORM_CLASS):
         self.canvas.unsetMapTool(self.selectPoint)
         self.canvas.setMapTool(self.userTool)
         if point:
-            width = self.iface.mapCanvas().mapUnitsPerPixel() * 100
+            width = self.iface.mapCanvas().mapUnitsPerPixel() * 50
             rect = QgsRectangle(point.x() - width,
                                 point.y() - width,
                                 point.x() + width,
